@@ -7,7 +7,7 @@ import { NavbarComponent } from "./navbar";
 import { FooterComponent } from "./footer";
 
 import { ContentComponent } from "./content";
-
+import {} from './register';
 @NgModule({
   imports: [BrowserModule, FormsModule],
   declarations: [
