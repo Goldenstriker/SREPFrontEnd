@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar";
 import { FooterComponent } from "./footer";
@@ -13,7 +13,13 @@ import { LoginComponent } from "./login";
 import { AlertComponent } from "./_components";
 import { HomeComponent } from "./home";
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, appRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    appRoutingModule
+  ],
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -24,10 +30,10 @@ import { HomeComponent } from "./home";
     HomeComponent,
     AlertComponent
   ],
-   providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
-    ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
