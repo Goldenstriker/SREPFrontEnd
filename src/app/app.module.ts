@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar";
 import { FooterComponent } from "./footer";
+
 import { ContentComponent } from "./content";
 
 @NgModule({
