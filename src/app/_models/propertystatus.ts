@@ -1,4 +1,4 @@
-export class PropertyStatus{
-  ID:number;
-  Name:string;
+export class PropertyStatus {
+  ID: number;
+  Name: string;
 }
