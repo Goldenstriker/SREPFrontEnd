@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.loadAllUsers();
+    this.loadAllCountry();
   }
 
   ngOnDestroy() {
@@ -57,6 +58,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private loadAllCountry() {
     this.masterService.getAllCountry().subscribe(counteries => {
       this.counteries = counteries;
+      console.log(counteries);
     });
   }
 }
