@@ -2,19 +2,19 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import { User } from "../_models";
-import { SiteURL } from "../constants";
+import { Constant } from "../constants";
 
 @Injectable({ providedIn: "root" })
 export class UserService {
   constructor(private http: HttpClient) {}
-  public baseURL: string = SiteURL;
+  public baseURL: string = Constant.SiteURL;
   getAll() {
-    console.log(SiteURL);
+    console.log(Constant.SiteURL);
     return this.http.get<User[]>(this.baseURL + `/users/`);
   }
 
   register(user: User) {
-    console.log(SiteURL);
+    console.log(Constant.SiteURL);
     return this.http.post(this.baseURL + `/register/`, user);
   }
 
