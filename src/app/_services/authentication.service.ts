@@ -27,7 +27,7 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.http
       .post<any>(
-        `https://housepredictionsystem.goldenstriker.repl.co/api-token-auth/`,
+        `https://srepbackend-1.goldenstriker.repl.co/api-token-auth/`,
         { username, password }
       )
       .pipe(

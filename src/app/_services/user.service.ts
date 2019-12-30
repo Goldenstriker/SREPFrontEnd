@@ -6,7 +6,7 @@ import { User } from '../_models';
 @Injectable({ providedIn: 'root' })
 export class UserService {
     constructor(private http: HttpClient) { }
-    public baseURL: string = "https://HousePredictionSystem.goldenstriker.repl.co";
+    public baseURL: string = "https://srepbackend-1.goldenstriker.repl.co";
     getAll() {
         return this.http.get<User[]>(this.baseURL+`/users/`);
     }
