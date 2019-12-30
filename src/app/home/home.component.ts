@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentUser: User;
   currentUserSubscription: Subscription;
   users: User[] = [];
-  counteries: Country[] = [];
+  countries: Country[] = [];
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -56,9 +56,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadAllCountry() {
-    this.masterService.getAllCountry().subscribe(counteries => {
-      this.counteries = counteries;
-      console.log(counteries);
+    this.masterService.getAllCountry().subscribe(countries => {
+      this.countries = countries;
+      console.log(countries);
     });
   }
 }
