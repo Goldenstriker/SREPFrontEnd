@@ -4,12 +4,13 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
 import { User } from "../_models";
-
+import {SiteURL} from '../constants';
 @Injectable({ providedIn: "root" })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   private httpOptions: any;
+  public baseURL: string = SiteURL;
   constructor(private http: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "x-www-form-urlencoded" })
@@ -27,7 +28,7 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.http
       .post<any>(
-        `https://srepbackend-1.goldenstriker.repl.co/api-token-auth/`,
+        this.baseURL+`/api-token-auth/`,
         { username, password }
       )
       .pipe(
