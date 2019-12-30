@@ -10,6 +10,7 @@ export class UserService {
     constructor(private http: HttpClient) { }
     public baseURL: string = SiteURL;
     getAll() {
+        console.log();
         return this.http.get<User[]>(this.baseURL+`/users/`);
     }
 
