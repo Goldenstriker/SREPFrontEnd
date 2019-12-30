@@ -4,13 +4,13 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
 import { User } from "../_models";
-import {SiteURL} from '../constants';
+import {Constant} from '../constants';
 @Injectable({ providedIn: "root" })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
   private httpOptions: any;
-  public baseURL: string = SiteURL;
+  
   constructor(private http: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "x-www-form-urlencoded" })
@@ -28,7 +28,7 @@ export class AuthenticationService {
   login(username: string, password: string) {
     return this.http
       .post<any>(
-        this.baseURL+`/api-token-auth/`,
+        Constant.AuthenticationURL,
         { username, password }
       )
       .pipe(
