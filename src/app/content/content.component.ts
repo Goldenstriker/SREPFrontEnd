@@ -15,16 +15,6 @@ export class ContentComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService
-  ) {
-    this.authenticationService.currentUser.subscribe(x => {
-      if (x) {
-        this.currentUser = x;
-        this.userService.getCurrentLoggedIn().subscribe(y => {
-          this.currentLoggedInUser = y.user;
-          console.log(y.user);
-        });
-      }
-    });
-  }
+  ) {}
   ngOnInit() {}
 }
