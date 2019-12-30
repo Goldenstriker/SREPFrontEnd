@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { User } from '../_models';
-import {Constant} from '../constants';
+import {SiteURL} from '../constants';
 
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
     constructor(private http: HttpClient) { }
-    public baseURL: string = "https://srepbackend-1.goldenstriker.repl.co";
+    public baseURL: string = SiteURL;
     getAll() {
         return this.http.get<User[]>(this.baseURL+`/users/`);
     }
