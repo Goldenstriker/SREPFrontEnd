@@ -1,3 +1,1 @@
-export class Constant{
-  URL :string = "https://srepfrontend111.stackblitz.io";
-}
+export const SiteURL :string = "https://srepfrontend111.stackblitz.io";
