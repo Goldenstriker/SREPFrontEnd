@@ -8,6 +8,6 @@ export class PropertyService {
   public baseURL: string = Constant.SiteURL;
   register(property: Property) {
     console.log(Constant.SiteURL);
-    return this.http.post(this.baseURL + `/register/`, property);
+    return this.http.post(this.baseURL + `/properties/`, property);
   }
 }
