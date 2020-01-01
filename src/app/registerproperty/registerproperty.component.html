@@ -42,12 +42,52 @@
 						</div>
 						<div class="form-group">
 							<label for="Country">Country</label>
-							<select formControlName="Country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_Floors.errors }">
+							<select formControlName="Country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Country.errors }">
                <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
               </select>
 
 							<div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
 								<div *ngIf="f.Country.errors.required">Country is required</div>
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="State">State</label>
+							<select formControlName="State" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.State.errors }">
+               <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
+              </select>
+
+							<div *ngIf="submitted && f.State.errors" class="invalid-feedback">
+								<div *ngIf="f.State.errors.required">State is required</div>
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="City">City</label>
+							<select formControlName="City" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.City.errors }">
+               <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
+              </select>
+
+							<div *ngIf="submitted && f.City.errors" class="invalid-feedback">
+								<div *ngIf="f.City.errors.required">City is required</div>
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="Property_Type">Property Type</label>
+							<select formControlName="Property_Type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Type.errors }">
+               <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
+              </select>
+
+							<div *ngIf="submitted && f.Property_Type.errors" class="invalid-feedback">
+								<div *ngIf="f.Property_Type.errors.required">Property Type is required</div>
+							</div>
+						</div>
+            <div class="form-group">
+							<label for="Property_Status">Property St</label>
+							<select formControlName="Property_Status" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Status.errors }">
+               <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
+              </select>
+
+							<div *ngIf="submitted && f.Property_Status.errors" class="invalid-feedback">
+								<div *ngIf="f.Property_Status.errors.required">Property Status is required</div>
 							</div>
 						</div>
 						<div class="form-group">
