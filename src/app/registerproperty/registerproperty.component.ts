@@ -27,11 +27,11 @@ export class RegisterpropertyComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      first_name: ["", Validators.required],
-      last_name: ["", Validators.required],
-      username: ["", Validators.required],
-      password: ["", [Validators.required, Validators.minLength(6)]],
-      email: ["", Validators.required]
+      Name : ["", Validators.required],
+      Description: ["", Validators.required],
+      No_Of_BedRooms: ["", Validators.required],
+      No_Of_BathRooms: ["", Validators.required],
+      No_Of_Floors: ["", Validators.required]
     });
   }
   // convenience getter for easy access to form fields
