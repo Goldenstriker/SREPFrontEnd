@@ -50,7 +50,7 @@
 								<div *ngIf="f.Country.errors.required">Country is required</div>
 							</div>
 						</div>
-            <div class="form-group">
+						<div class="form-group">
 							<label for="State">State</label>
 							<select formControlName="State" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.State.errors }">
                <option *ngFor="let state of states" value={{state.State_ID}}>{{state.Name}}</option>
@@ -60,7 +60,7 @@
 								<div *ngIf="f.State.errors.required">State is required</div>
 							</div>
 						</div>
-            <div class="form-group">
+						<div class="form-group">
 							<label for="City">City</label>
 							<select formControlName="City" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.City.errors }">
                <option *ngFor="let city of cities" value={{city.City_ID}}>{{city.Name}}</option>
@@ -70,7 +70,7 @@
 								<div *ngIf="f.City.errors.required">City is required</div>
 							</div>
 						</div>
-            <div class="form-group">
+						<div class="form-group">
 							<label for="Property_Type">Property Type</label>
 							<select formControlName="Property_Type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Type.errors }">
                <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
@@ -80,7 +80,7 @@
 								<div *ngIf="f.Property_Type.errors.required">Property Type is required</div>
 							</div>
 						</div>
-            <div class="form-group">
+						<div class="form-group">
 							<label for="Property_Status">Property Status</label>
 							<select formControlName="Property_Status" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Status.errors }">
                <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>

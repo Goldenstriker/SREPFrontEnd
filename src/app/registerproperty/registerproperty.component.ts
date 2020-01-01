@@ -88,12 +88,12 @@ export class RegisterpropertyComponent implements OnInit {
     });
   }
   private loadAllState() {
-    this.masterService.getAllState().subscribe(states => {
+    this.masterService.getAllStateByCountry().subscribe(states => {
       this.states = states;
     });
   }
   private loadAllCity() {
-    this.masterService.getAllCity().subscribe(cities => {
+    this.masterService.getAllCityByState().subscribe(cities => {
       this.cities = cities;
     });
   }
