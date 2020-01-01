@@ -42,7 +42,8 @@ export class RegisterpropertyComponent implements OnInit {
       Description: ["", Validators.required],
       No_Of_BedRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
-      No_Of_Floors: ["", Validators.required]
+      No_Of_Floors: ["", Validators.required],
+      Country:["", Validators.required]
     });
   }
   // convenience getter for easy access to form fields
