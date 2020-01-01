@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
-import { Country } from "../_models";
+import { Country, State, City } from "../_models";
 import {
   AlertService,
   UserService,
@@ -20,6 +20,8 @@ export class RegisterpropertyComponent implements OnInit {
   loading = false;
   submitted = false;
   countries: Country[] = [];
+  states: State[] = [];
+  cities: City[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -37,6 +39,8 @@ export class RegisterpropertyComponent implements OnInit {
 
   ngOnInit() {
     this.loadAllCountry();
+    this.loadAllState();
+    this.loadAllCity();
     this.registerForm = this.formBuilder.group({
       Name: ["", Validators.required],
       Description: ["", Validators.required],
@@ -82,6 +86,16 @@ export class RegisterpropertyComponent implements OnInit {
     this.masterService.getAllCountry().subscribe(countries => {
       this.countries = countries;
       console.log(countries);
+    });
+  }
+  private loadAllState() {
+    this.masterService.getAllState().subscribe(states => {
+      this.states = states;
+    });
+  }
+  private loadAllCity() {
+    this.masterService.getAllCity().subscribe(cities => {
+      this.cities = cities;
     });
   }
 }
