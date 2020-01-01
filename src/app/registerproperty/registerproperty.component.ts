@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
+import { Country } from "../_models";
 import {
   AlertService,
   UserService,
@@ -18,6 +19,7 @@ export class RegisterpropertyComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;
+  countries: Country[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -25,7 +27,7 @@ export class RegisterpropertyComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService,
     private propertyService: PropertyService,
-    private masterService:MasterService
+    private masterService: MasterService
   ) {
     // redirect to home if already logged in
     if (!this.authenticationService.currentUserValue) {
@@ -34,6 +36,7 @@ export class RegisterpropertyComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loadAllCountry();
     this.registerForm = this.formBuilder.group({
       Name: ["", Validators.required],
       Description: ["", Validators.required],
@@ -69,5 +72,11 @@ export class RegisterpropertyComponent implements OnInit {
           this.loading = false;
         }
       );
+  }
+   private loadAllCountry() {
+    this.masterService.getAllCountry().subscribe(countries => {
+      this.countries = countries;
+      console.log(countries);
+    });
   }
 }
