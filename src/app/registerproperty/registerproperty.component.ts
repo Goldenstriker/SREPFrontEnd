@@ -85,7 +85,6 @@ export class RegisterpropertyComponent implements OnInit {
    private loadAllCountry() {
     this.masterService.getAllCountry().subscribe(countries => {
       this.countries = countries;
-      console.log(countries);
     });
   }
   private loadAllState() {

@@ -63,7 +63,7 @@
             <div class="form-group">
 							<label for="City">City</label>
 							<select formControlName="City" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.City.errors }">
-               <option *ngFor="let city of cities" value={{city.City_ID}}>{{c.Name}}</option>
+               <option *ngFor="let city of cities" value={{city.City_ID}}>{{city.Name}}</option>
               </select>
 
 							<div *ngIf="submitted && f.City.errors" class="invalid-feedback">
