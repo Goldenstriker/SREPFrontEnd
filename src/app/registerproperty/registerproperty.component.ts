@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
-import { AlertService, UserService, AuthenticationService } from "../_services";
+import { AlertService, UserService, AuthenticationService, PropertyService } from "../_services";
 @Component({
   selector: "app-registerproperty",
   templateUrl: "./registerproperty.component.html",
@@ -17,7 +17,8 @@ export class RegisterpropertyComponent implements OnInit {
     private router: Router,
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private propertyService:PropertyService
   ) {
     // redirect to home if already logged in
     if (!this.authenticationService.currentUserValue) {
@@ -48,13 +49,13 @@ export class RegisterpropertyComponent implements OnInit {
     }
 
     this.loading = true;
-    this.userService
+    this.propertyService
       .register(this.registerForm.value)
       .pipe(first())
       .subscribe(
         data => {
           this.alertService.success("Registration successful", true);
-          this.router.navigate(["/login"]);
+          this.router.navigate(["/hom"]);
         },
         error => {
           this.alertService.error(error);
