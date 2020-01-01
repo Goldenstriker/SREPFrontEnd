@@ -2,7 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
-import { AlertService, UserService, AuthenticationService, PropertyService } from "../_services";
+import {
+  AlertService,
+  UserService,
+  AuthenticationService,
+  PropertyService,
+  MasterService
+} from "../_services";
 @Component({
   selector: "app-registerproperty",
   templateUrl: "./registerproperty.component.html",
@@ -18,7 +24,7 @@ export class RegisterpropertyComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private userService: UserService,
     private alertService: AlertService,
-    private propertyService:PropertyService
+    private propertyService: PropertyService
   ) {
     // redirect to home if already logged in
     if (!this.authenticationService.currentUserValue) {
@@ -28,7 +34,7 @@ export class RegisterpropertyComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      Name : ["", Validators.required],
+      Name: ["", Validators.required],
       Description: ["", Validators.required],
       No_Of_BedRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
