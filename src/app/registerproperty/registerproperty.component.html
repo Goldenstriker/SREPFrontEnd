@@ -24,14 +24,14 @@
 		</div>
 		<div class="form-group">
 			<label for="No_Of_BathRooms">No. of BathRooms</label>
-			<input type="text" formControlName="No_Of_BathRooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_BathRooms.errors }" />
+			<input type="number" formControlName="No_Of_BathRooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_BathRooms.errors }" />
 			<div *ngIf="submitted && f.No_Of_BathRooms.errors" class="invalid-feedback">
 				<div *ngIf="f.No_Of_BathRooms.errors.required">No. of BathRooms is required</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="No_Of_Floors">No. of Floors</label>
-			<input type="text" formControlName="No_Of_Floors" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_Floors.errors }" />
+			<input type="number" formControlName="No_Of_Floors" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_Floors.errors }" />
 			<div *ngIf="submitted && f.No_Of_Floors.errors" class="invalid-feedback">
 				<div *ngIf="f.No_Of_Floors.errors.required">No. of Floors is required</div>
 			</div>
@@ -42,7 +42,7 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Register
         </button>
-			<a routerLink="/ho" class="btn btn-link">Cancel</a>
+			<a routerLink="/home" class="btn btn-link">Cancel</a>
 		</div>
 	</form>
 </div>
