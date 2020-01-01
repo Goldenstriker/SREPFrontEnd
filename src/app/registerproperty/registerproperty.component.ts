@@ -24,7 +24,8 @@ export class RegisterpropertyComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private userService: UserService,
     private alertService: AlertService,
-    private propertyService: PropertyService
+    private propertyService: PropertyService,
+    private masterService:MasterService
   ) {
     // redirect to home if already logged in
     if (!this.authenticationService.currentUserValue) {
@@ -61,7 +62,7 @@ export class RegisterpropertyComponent implements OnInit {
       .subscribe(
         data => {
           this.alertService.success("Registration successful", true);
-          this.router.navigate(["/hom"]);
+          this.router.navigate(["/home"]);
         },
         error => {
           this.alertService.error(error);
