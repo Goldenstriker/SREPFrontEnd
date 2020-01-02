@@ -12,9 +12,9 @@ import { RegisterComponent } from "./register";
 import { LoginComponent } from "./login";
 import { AlertComponent } from "./_components";
 import { HomeComponent } from "./home";
-import { RegisterpropertyComponent } from './registerproperty/registerproperty.component';
-import { PropertyService } from './_services/property.service';
-import { PropertyComponent } from './property/property.component';
+import { RegisterpropertyComponent } from './registerproperty';
+import { PropertyService } from './_services';
+import { PropertyComponent } from './property';
 @NgModule({
   imports: [
     BrowserModule,
