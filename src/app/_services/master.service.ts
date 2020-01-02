@@ -16,9 +16,9 @@ export class MasterService {
     return this.http.get<City[]>(this.baseURL + "/city/");
   }
   getPropertyType() {
-    return this.http.get<PropertyType[]>(this.baseURL + "/city/");
+    return this.http.get<PropertyType[]>(this.baseURL + "/propertytype/");
   }
   getPropertyStatus() {
-    return this.http.get<PropertyStatus[]>(this.baseURL + "/city/");
+    return this.http.get<PropertyStatus[]>(this.baseURL + "/propertystatus/");
   }
 }
