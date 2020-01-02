@@ -13,3 +13,6 @@
       <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
     </select>
 </div> -->
+<div class="container">
+  <app-property *ngFor="let property of properties" [property]="property"></app-property>
+</div>
