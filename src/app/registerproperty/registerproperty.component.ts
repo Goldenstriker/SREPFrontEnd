@@ -43,6 +43,8 @@ export class RegisterpropertyComponent implements OnInit {
     this.loadAllCountry();
     this.loadAllState();
     this.loadAllCity();
+    this.loadPropertyStatus();
+    this.loadPropertyType();
     this.registerForm = this.formBuilder.group({
       Name: ["", Validators.required],
       Description: ["", Validators.required],
