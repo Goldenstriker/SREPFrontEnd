@@ -1,6 +1,7 @@
-<div class="row">
-	<div class="col-sm-6 offset-sm-3">
-		<h2>Login</h2>
+<div class="card mt-">
+	<article class="card-body">
+		<a routerLink="/register" class="float-right btn btn-outline-primary">Sign up</a>
+		<h4 class="card-title mb-4 mt-1">Sign in</h4>
 		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 			<div class="form-group">
 				<label for="username">Username</label>
@@ -24,5 +25,5 @@
 				<a routerLink="/register" class="btn btn-link">Register</a>
 			</div>
 		</form>
-	</div>
+	</article>
 </div>
