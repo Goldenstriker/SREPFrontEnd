@@ -73,7 +73,7 @@
 						<div class="form-group">
 							<label for="Property_Type">Property Type</label>
 							<select formControlName="Property_Type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Type.errors }">
-               <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
+               <option *ngFor="let type of propertytype" value={{type.ID}}>{{type.Name}}</option>
               </select>
 
 							<div *ngIf="submitted && f.Property_Type.errors" class="invalid-feedback">
@@ -83,7 +83,7 @@
 						<div class="form-group">
 							<label for="Property_Status">Property Status</label>
 							<select formControlName="Property_Status" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Status.errors }">
-               <option *ngFor="let country of countries" value={{country.Country_ID}}>{{country.Name}}</option>
+               <option *ngFor="let status of propertystatus" value={{status.ID}}>{{status.Name}}</option>
               </select>
 
 							<div *ngIf="submitted && f.Property_Status.errors" class="invalid-feedback">
