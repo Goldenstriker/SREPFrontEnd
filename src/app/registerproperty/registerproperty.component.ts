@@ -104,11 +104,13 @@ export class RegisterpropertyComponent implements OnInit {
   private loadPropertyStatus() {
     this.masterService.getPropertyStatus().subscribe(propertystatus => {
       this.propertystatus = propertystatus;
+      console.log(propertystatus);
     });
   }
   private loadPropertyType() {
     this.masterService.getPropertyType().subscribe(propertytype => {
       this.propertytype = propertytype;
+      console.log(propertytype);
     });
   }
 }
