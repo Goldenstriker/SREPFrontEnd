@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
-import { Country, State, City } from "../_models";
+import { Country, State, City, PropertyType, PropertyStatus } from "../_models";
 import {
   AlertService,
   UserService,
@@ -22,6 +22,8 @@ export class RegisterpropertyComponent implements OnInit {
   countries: Country[] = [];
   states: State[] = [];
   cities: City[] = [];
+  propertystatus:PropertyStatus[]=[];
+  propertytype:PropertyType[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -95,6 +97,11 @@ export class RegisterpropertyComponent implements OnInit {
   private loadAllCity() {
     this.masterService.getAllCityByState().subscribe(cities => {
       this.cities = cities;
+    });
+  }
+  private loadPropertyStatus() {
+    this.masterService.getPropertyStatus().subscribe(propertystatus => {
+      this.propertystatus = propertystatus;
     });
   }
 }
