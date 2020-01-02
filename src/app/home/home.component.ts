@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadAllUsers();
+    //this.loadAllUsers();
     this.loadAllCountry();
   }
 
