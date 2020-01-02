@@ -11,3 +11,4 @@ export class LoaderserviceService {
     hide() {
         this.isLoading = false;
     }
+}
