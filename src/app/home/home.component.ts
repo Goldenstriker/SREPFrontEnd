@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { first } from "rxjs/operators";
 
-import { User, Country } from "../_models";
+import { User, Country, Property } from "../_models";
 import {
   UserService,
   AuthenticationService,
@@ -16,10 +16,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentUserSubscription: Subscription;
   users: User[] = [];
   countries: Country[] = [];
+  properties: Property[] = [];
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
-    private masterService: MasterService
+    private masterService: MasterService,
+    private propertyService: PropertyService
   ) {
     this.currentUserSubscription = this.authenticationService.currentUser.subscribe(
       user => {
@@ -60,6 +62,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.masterService.getAllCountry().subscribe(countries => {
       this.countries = countries;
       console.log(countries);
+    });
+  }
+  //propertyService
+  private loadAllProperty() {
+    this.propertyService.getAll().subscribe(properties => {
+      this.properties = properties;
     });
   }
 }
