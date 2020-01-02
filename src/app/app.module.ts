@@ -14,6 +14,7 @@ import { AlertComponent } from "./_components";
 import { HomeComponent } from "./home";
 import { RegisterpropertyComponent } from './registerproperty/registerproperty.component';
 import { PropertyService } from './_services/property.service';
+import { PropertyComponent } from './property/property.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -31,7 +32,8 @@ import { PropertyService } from './_services/property.service';
     LoginComponent,
     HomeComponent,
     AlertComponent,
-    RegisterpropertyComponent
+    RegisterpropertyComponent,
+    PropertyComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
