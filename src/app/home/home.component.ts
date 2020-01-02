@@ -6,7 +6,8 @@ import { User, Country } from "../_models";
 import {
   UserService,
   AuthenticationService,
-  MasterService
+  MasterService,
+  PropertyService
 } from "../_services";
 
 @Component({ templateUrl: "home.component.html" })
