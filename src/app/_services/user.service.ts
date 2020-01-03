@@ -23,6 +23,6 @@ export class UserService {
   }
 
   getCurrentLoggedIn() {
-    return this.http.get<User>(this.baseURL + `/current_user/`);
+    return this.http.get<any>(this.baseURL + `/current_user/`);
   }
 }
