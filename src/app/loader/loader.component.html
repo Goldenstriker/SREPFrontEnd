@@ -1,7 +1,4 @@
-<div class="container" >
-	<div id="overlay" >
-		<div class="spinner-border text-primary" style="margin: 0 50%;" role="status">
+
+		<div *ngIf="loadingserviceService.isLoading" class="spinner-border text-primary" style="margin: 0 50%;" role="status">
 			<span class="sr-only">Loading...</span>
 		</div>
-	</div>
-</div>
