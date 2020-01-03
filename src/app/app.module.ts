@@ -16,7 +16,7 @@ import { RegisterpropertyComponent } from './registerproperty';
 import { LoaderService } from './_services';
 import { PropertyComponent } from './property';
 import { LoaderComponent } from './loader';
-import { FilterPipe } from './_helpers/filter.pipe';
+import { FilterPipe } from './_helpers';
 @NgModule({
   imports: [
     BrowserModule,
