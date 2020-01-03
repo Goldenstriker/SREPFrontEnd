@@ -84,7 +84,7 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let country of countries">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1">
+								<input type="checkbox" class="custom-control-input" id={{country.Country_ID}}>
 								<label class="custom-control-label" for="Check1">{{country.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
