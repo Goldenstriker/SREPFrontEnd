@@ -15,7 +15,7 @@ import { HomeComponent } from "./home";
 import { RegisterpropertyComponent } from './registerproperty';
 import { LoaderService } from './_services';
 import { PropertyComponent } from './property';
-import { LoaderComponent } from './loader/loader.component';
+import { LoaderComponent } from './loader';
 @NgModule({
   imports: [
     BrowserModule,
