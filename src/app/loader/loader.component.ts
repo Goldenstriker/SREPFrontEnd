@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoaderserviceService } from '../_services';
+import { LoaderService } from '../_services';
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',
@@ -7,7 +7,7 @@ import { LoaderserviceService } from '../_services';
 })
 export class LoaderComponent implements OnInit {
 
-  constructor(private loadingserviceService:LoaderserviceService) { }
+  constructor(private loadingserviceService:LoaderService) { }
 
   ngOnInit() {
   }

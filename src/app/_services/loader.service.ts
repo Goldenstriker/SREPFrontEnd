@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: "root"
 })
-export class LoaderserviceService {
+export class LoaderService {
     isLoading:boolean = false;
     show() {
         this.isLoading = true;
