@@ -40,7 +40,7 @@ import { LoaderComponent } from './loader';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true, providers:[LoaderService] }
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
