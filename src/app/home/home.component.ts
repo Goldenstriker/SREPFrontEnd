@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   users: User[] = [];
   countries: Country[] = [];
   properties: Property[] = [];
+  searchText:string;
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -70,5 +71,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.propertyService.getAll().subscribe(properties => {
       this.properties = properties;
     });
+  }
+
+  toggleVisibility(e){
+    this.searchText= "Test Property 1";
   }
 }

@@ -84,7 +84,7 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let country of countries">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id={{country.Country_ID}}>
+								<input type="checkbox" class="custom-control-input" id="Check1" [(ngModel)]="searchText" (change)="toggleVisibility($event)" />
 								<label class="custom-control-label" for="Check1">{{country.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
@@ -93,7 +93,7 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<app-property *ngFor="let property of properties" [property]="property"></app-property>
+			<app-property *ngFor="let property of properties | filter:searchText" [property]="property"></app-property>
 		</div>
 	</div>
 </div>
