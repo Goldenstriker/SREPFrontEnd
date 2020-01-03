@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Constant } from "../constants";
-import { Country, State, City, Property } from "../models";
+import { Country, State, City, Property } from "../_models";
 @Injectable({ providedIn: "root" })
 export class PropertyService {
   constructor(private http: HttpClient) {}
