@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
     if (searchText.Country.length==0 || searchText.State.length==0 || searchText.City.length==0) return items;
     //searchText = searchText.toLowerCase();
     return items.filter(it => {
-      return it.Name.toLowerCase().includes(searchText);
+      return searchText.Country.indexOf(it.Country);
     });
   }
 }
