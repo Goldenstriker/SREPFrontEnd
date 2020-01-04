@@ -115,7 +115,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
   toggleVisibility(e, data, prop) {
-    if (this.searchText[prop].indexOf(data) != -1)
+    if (this.searchText[prop].indexOf(data) == -1)
       this.searchText[prop].push(data);
     console.log(this.searchText)
   }
