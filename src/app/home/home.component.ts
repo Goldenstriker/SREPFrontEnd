@@ -32,7 +32,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   searchText: string = JSON.stringify({
     Country: [],
     State: [],
-    City: []
+    City: [],
+    PropertyType: [],
+    PropertyStatus: []
   });
   tempData: any = {};
   constructor(
