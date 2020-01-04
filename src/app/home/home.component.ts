@@ -29,11 +29,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   cities: City[] = [];
   propertystatus: PropertyStatus[] = [];
   propertytype: PropertyType[] = [];
-  searchText: string = JSON.stringify({
-    Country: [],
-    State: [],
-    City: []
-  });
+  searchText: string = JSON.stringify([
+    {
+      Country: []
+    },
+    {
+      State: []
+    },
+    {
+      City: []
+    }
+  ]);
   tempData: any = {};
   constructor(
     private authenticationService: AuthenticationService,
