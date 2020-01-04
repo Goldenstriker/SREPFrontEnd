@@ -120,6 +120,34 @@
 						</div> <!-- card-body.// -->
 					</div>
 				</article> <!-- card-group-item.// -->
+        <article class="card-group-item">
+					<header class="card-header">
+						<h6 class="title">Property Type</h6>
+					</header>
+					<div class="filter-content">
+						<div class="card-body">
+							<div class="custom-control custom-checkbox" *ngFor="let type of propertytype">
+								<span class="float-right badge badge-light round">52</span>
+								<input type="checkbox" class="custom-control-input" [id]="type.Name" (change)="toggleVisibility($event,type.ID,'PropertyType')" />
+								<label class="custom-control-label" [for]="type.Name">{{type.Name}}</label>
+							</div> <!-- form-check.// -->
+						</div> <!-- card-body.// -->
+					</div>
+				</article> <!-- card-group-item.// -->
+        <article class="card-group-item">
+					<header class="card-header">
+						<h6 class="title">Property Type</h6>
+					</header>
+					<div class="filter-content">
+						<div class="card-body">
+							<div class="custom-control custom-checkbox" *ngFor="let status of propertystatus">
+								<span class="float-right badge badge-light round">52</span>
+								<input type="checkbox" class="custom-control-input" [id]="status.Name" (change)="toggleVisibility($event,status.ID,'PropertyType')" />
+								<label class="custom-control-label" [for]="status.Name">{{status.Name}}</label>
+							</div> <!-- form-check.// -->
+						</div> <!-- card-body.// -->
+					</div>
+				</article> <!-- card-group-item.// -->
 			</div>
 		</div>
 		<div class="col-sm-8">
