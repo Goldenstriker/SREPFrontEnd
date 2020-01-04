@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     State: [],
     City: []
   });
-  tempData: any ={};
+  tempData: any = {};
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -116,9 +116,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
   toggleVisibility(e, data, prop) {
-   this.tempData = JSON.parse(this.searchText);
-    if (this.tempData[prop].indexOf(data) == -1)
+    this.tempData = JSON.parse(this.searchText);
+    if (this.tempData[prop].indexOf(data) == -1 && e.srcElement.checked)
       this.tempData[prop].push(data);
+    else this.tempData[prop].pop(data);
     this.searchText = JSON.stringify(this.tempData);
   }
 }
