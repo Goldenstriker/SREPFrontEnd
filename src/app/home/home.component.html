@@ -142,7 +142,7 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let status of propertystatus">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" [id]="status.Name" (change)="toggleVisibility($event,status.ID,'PropertyType')" />
+								<input type="checkbox" class="custom-control-input" [id]="status.Name" (change)="toggleVisibility($event,status.ID,'PropertyStatus')" />
 								<label class="custom-control-label" [for]="status.Name">{{status.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
