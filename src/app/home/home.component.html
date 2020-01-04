@@ -85,8 +85,8 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let country of countries">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1" (change)="toggleVisibility($event,country.Country_ID)" />
-								<label class="custom-control-label" for="Check1">{{country.Name}}</label>
+								<input type="checkbox" class="custom-control-input" id="chkCountry" (change)="toggleVisibility($event,country.Country_ID)" />
+								<label class="custom-control-label" for="chkCountry">{{country.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
 					</div>
@@ -100,8 +100,8 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let state of states">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1" (change)="toggleVisibility($event,state.State_ID)" />
-								<label class="custom-control-label" for="Check1">{{state.Name}}</label>
+								<input type="checkbox" class="custom-control-input" id="chkState" (change)="toggleVisibility($event,state.State_ID)" />
+								<label class="custom-control-label" for="chkState">{{state.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
 					</div>
@@ -115,8 +115,8 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let city of cities">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1" (change)="toggleVisibility($event,city.City_ID)" />
-								<label class="custom-control-label" for="Check1">{{city.Name}}</label>
+								<input type="checkbox" class="custom-control-input" id="chkCity" (change)="toggleVisibility($event,city.City_ID)" />
+								<label class="custom-control-label" for="chkCity">{{city.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
 					</div>
@@ -124,7 +124,7 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<app-property *ngFor="let property of properties | filter:searchText" [property]="property"></app-property>
+			<app-property *ngFor="let property of properties | filter: searchText.Country" [property]="property"></app-property>
 		</div>
 	</div>
 </div>
