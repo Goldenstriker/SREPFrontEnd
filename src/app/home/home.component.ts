@@ -2,7 +2,15 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { first } from "rxjs/operators";
 
-import { User, Country, Property,State, City, PropertyType, PropertyStatus } from "../_models";
+import {
+  User,
+  Country,
+  Property,
+  State,
+  City,
+  PropertyType,
+  PropertyStatus
+} from "../_models";
 import {
   UserService,
   AuthenticationService,
@@ -19,12 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   properties: Property[] = [];
   states: State[] = [];
   cities: City[] = [];
-  propertystatus:PropertyStatus[]=[];
-  propertytype:PropertyType[]=[];
-  searchText:any = {
-    Country:'',
-    State:'',
-    City:''
+  propertystatus: PropertyStatus[] = [];
+  propertytype: PropertyType[] = [];
+  searchText: any = {
+    Country: [],
+    State: [],
+    City: []
   };
   constructor(
     private authenticationService: AuthenticationService,
@@ -46,7 +54,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loadAllCity();
     this.loadPropertyStatus();
     this.loadPropertyType();
-    this.loadAllProperty()
+    this.loadAllProperty();
   }
 
   ngOnDestroy() {
@@ -84,7 +92,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.properties = properties;
     });
   }
-    private loadAllState() {
+  private loadAllState() {
     this.masterService.getAllStateByCountry().subscribe(states => {
       this.states = states;
     });
@@ -106,7 +114,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       console.log(propertytype);
     });
   }
-  toggleVisibility(e){
-    this.searchText= "Test Property 1";
+  toggleVisibility(e, data, prop) {
+    if (this.searchText[prop].indexOf(data) != -1)
+      this.searchText[prop].push(data);
   }
 }
