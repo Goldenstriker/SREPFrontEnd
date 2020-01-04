@@ -29,11 +29,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   cities: City[] = [];
   propertystatus: PropertyStatus[] = [];
   propertytype: PropertyType[] = [];
-  searchText: any = {
+  searchText: string = JSON.stringify({
     Country: [],
     State: [],
     City: []
-  };
+  });
   tempData: any ={};
   constructor(
     private authenticationService: AuthenticationService,
@@ -116,9 +116,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
   toggleVisibility(e, data, prop) {
-   this.tempData = this.searchText;
+   this.tempData = JSON.parse(this.searchText);
     if (this.tempData[prop].indexOf(data) == -1)
       this.tempData[prop].push(data);
-    this.searchText = this.tempData;
+    this.searchText = JSON.stringify(this.tempData);
   }
 }
