@@ -78,16 +78,16 @@
 				</article> <!-- card-group-item.// -->
 				<article class="card-group-item">
 					<header class="card-header">
-            <input type="text"  [(ngModel)]="searchText" />
+						<input type="text"  [(ngModel)]="searchText" />
 						<h6 class="title">Country</h6>
 					</header>
 					<div class="filter-content">
-            
+
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let country of countries">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="chkCountry" (change)="toggleVisibility($event,country.Country_ID,'Country')" />
-								<label class="custom-control-label" for="chkCountry">{{country.Name}}</label>
+								<input type="checkbox" class="custom-control-input" id={{ "chkCountry"+country.Name}} (change)="toggleVisibility($event,country.Country_ID,'Country')" />
+								<label class="custom-control-label" for={{ "chkCountry"+country.Name}}>{{country.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
 					</div>
@@ -106,7 +106,7 @@
 						</div> <!-- card-body.// -->
 					</div>
 				</article> <!-- card-group-item.// -->
-        <article class="card-group-item">
+				<article class="card-group-item">
 					<header class="card-header">
 						<h6 class="title">City</h6>
 					</header>
