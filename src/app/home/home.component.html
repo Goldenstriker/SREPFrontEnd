@@ -86,8 +86,8 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let country of countries">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id={{ "chkCountry"+country.Name}} (change)="toggleVisibility($event,country.Country_ID,'Country')" />
-								<label class="custom-control-label" for={{ "chkCountry"+country.Name}}>{{country.Name}}</label>
+								<input type="checkbox" class="custom-control-input" [id]="country.Name" (change)="toggleVisibility($event,country.Country_ID,'Country')" />
+								<label class="custom-control-label" [for]="country.Name">{{country.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
 					</div>
