@@ -21,7 +21,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   cities: City[] = [];
   propertystatus:PropertyStatus[]=[];
   propertytype:PropertyType[]=[];
-  searchText:string;
+  searchText:any = {
+    Country:'',
+    State:'',
+    City:''
+  };
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,

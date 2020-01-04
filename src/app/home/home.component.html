@@ -81,10 +81,11 @@
 						<h6 class="title">Country</h6>
 					</header>
 					<div class="filter-content">
+            <input type="hidden" style="display:none" [(ngModel)]="searchText.Country" />
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let country of countries">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1" [(ngModel)]="searchText" (change)="toggleVisibility($event)" />
+								<input type="checkbox" class="custom-control-input" id="Check1" (change)="toggleVisibility($event,country.Country_ID)" />
 								<label class="custom-control-label" for="Check1">{{country.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
@@ -95,10 +96,11 @@
 						<h6 class="title">State</h6>
 					</header>
 					<div class="filter-content">
+            <input type="hidden" style="display:none" [(ngModel)]="searchText.State" />
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let state of states">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1" [(ngModel)]="searchText" (change)="toggleVisibility($event)" />
+								<input type="checkbox" class="custom-control-input" id="Check1" (change)="toggleVisibility($event,state.State_ID)" />
 								<label class="custom-control-label" for="Check1">{{state.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
@@ -109,10 +111,11 @@
 						<h6 class="title">City</h6>
 					</header>
 					<div class="filter-content">
+            <input type="hidden" style="display:none" [(ngModel)]="searchText.City" />
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let city of cities">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" id="Check1" [(ngModel)]="searchText" (change)="toggleVisibility($event)" />
+								<input type="checkbox" class="custom-control-input" id="Check1" (change)="toggleVisibility($event,city.City_ID)" />
 								<label class="custom-control-label" for="Check1">{{city.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
