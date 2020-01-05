@@ -23,6 +23,6 @@ export class PropertyService {
 
   update(property: Property,id:string) {
     console.log(Constant.SiteURL);
-    return this.http.post(this.baseURL + `/properties/`+ i, property);
+    return this.http.pu(this.baseURL + `/properties/`+ id, property);
   }
 }
