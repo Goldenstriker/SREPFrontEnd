@@ -1,18 +1,19 @@
 <div class="card mb-4">
-  <div class="card-header">{{property.Name}}</div>
-  <div class="card-body">
-    <table class="table table-bordered">
-      <tr>
-        <td>Name</td>
-        <td>{{property.Name}}</td>
-      </tr>
-      <tr>
-        <td>Description</td>
-        <td>{{property.Description}}</td>
-      </tr>
-    </table>
-  </div>
-  <div class="card-footer">
-    	<a class="float-right btn btn-outline-primary" [routerLink]="['/registerproperty',property.ID]">Edit</a>
-  </div>
+	<div class="card-header">{{property.Name}}</div>
+	<div class="card-body">
+		<table class="table table-bordered">
+			<tr>
+				<td>Name</td>
+				<td>{{property.Name}}</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td>{{property.Description}}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="card-footer">
+		<i class="fa fa-angular"></i>
+		<a class="float-right btn btn-outline-primary" [routerLink]="['/registerproperty',property.ID]">Edit</a>
+	</div>
 </div>
