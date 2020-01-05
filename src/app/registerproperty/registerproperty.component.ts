@@ -24,6 +24,8 @@ export class RegisterpropertyComponent implements OnInit {
   cities: City[] = [];
   propertystatus: PropertyStatus[] = [];
   propertytype: PropertyType[] = [];
+  isEditForm: boolean = false;
+  recordID: string = "";
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -61,9 +63,10 @@ export class RegisterpropertyComponent implements OnInit {
     });
     this.route.params.subscribe(params => {
       if (params && params.id) {
+        this.recordID = params.id;
         this.propertyService.get(params.id).subscribe(property => {
-          console.log(property);
           this.registerForm.setValue(property);
+          this.isEditForm = true;
         });
       }
     });
@@ -82,19 +85,36 @@ export class RegisterpropertyComponent implements OnInit {
     }
 
     this.loading = true;
-    this.propertyService
-      .register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.alertService.success("Registration successful", true);
-          this.router.navigate(["/home"]);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        }
-      );
+    if (this.isEditForm) {
+      //recordID
+      this.propertyService
+        .update(this.registerForm.value,this.recordID)
+        .pipe(first())
+        .subscribe(
+          data => {
+            this.alertService.success("Record updated", true);
+            this.router.navigate(["/home"]);
+          },
+          error => {
+            this.alertService.error(error);
+            this.loading = false;
+          }
+        );
+    } else {
+      this.propertyService
+        .register(this.registerForm.value)
+        .pipe(first())
+        .subscribe(
+          data => {
+            this.alertService.success("Registration successful", true);
+            this.router.navigate(["/home"]);
+          },
+          error => {
+            this.alertService.error(error);
+            this.loading = false;
+          }
+        );
+    }
   }
   private loadAllCountry() {
     this.masterService.getAllCountry().subscribe(countries => {

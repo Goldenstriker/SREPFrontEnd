@@ -20,4 +20,9 @@ export class PropertyService {
     console.log(Constant.SiteURL);
     return this.http.get<Property>(this.baseURL + `/properties/` + id);
   }
+
+  update(property: Property,id:string) {
+    console.log(Constant.SiteURL);
+    return this.http.post(this.baseURL + `/properties/`+ i, property);
+  }
 }
