@@ -61,6 +61,7 @@ export class RegisterpropertyComponent implements OnInit {
     this.route.params.subscribe(params=>{
       if(params && params.id){
         let property = this.propertyService.get(params.id);
+        console.log(property);
         this.registerForm.setValue(property);
       }
     });
