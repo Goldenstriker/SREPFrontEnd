@@ -7,22 +7,22 @@ export class PropertyService {
   constructor(private http: HttpClient) {}
   public baseURL: string = Constant.SiteURL;
   register(property: Property) {
-    console.log(Constant.SiteURL);
+    
     return this.http.post(this.baseURL + `/properties/`, property);
   }
 
   getAll() {
-    console.log(Constant.SiteURL);
+    
     return this.http.get<Property[]>(this.baseURL + `/properties/`);
   }
 
   get(id: number) {
-    console.log(Constant.SiteURL);
+    
     return this.http.get<Property>(this.baseURL + `/properties/` + id);
   }
 
   update(property: Property,id:string) {
-    console.log(Constant.SiteURL);
-    return this.http.pu(this.baseURL + `/properties/`+ id, property);
+    
+    return this.http.put(this.baseURL + `/properties/`+ id+'/', property);
   }
 }
