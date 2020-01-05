@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
 import { Country, State, City, PropertyType, PropertyStatus } from "../_models";
@@ -27,6 +27,7 @@ export class RegisterpropertyComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private route:ActivatedRoute,
     private authenticationService: AuthenticationService,
     private userService: UserService,
     private alertService: AlertService,
