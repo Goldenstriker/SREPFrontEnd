@@ -10,12 +10,14 @@ export class PropertyService {
     console.log(Constant.SiteURL);
     return this.http.post(this.baseURL + `/properties/`, property);
   }
+
   getAll() {
     console.log(Constant.SiteURL);
     return this.http.get<Property[]>(this.baseURL + `/properties/`);
   }
-    get(id:number) {
+
+  get(id: number) {
     console.log(Constant.SiteURL);
-    return this.http.get<Property>(this.baseURL + `/properties/`+ id);
+    return this.http.get<Property>(this.baseURL + `/properties/` + id);
   }
 }

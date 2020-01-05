@@ -58,6 +58,12 @@ export class RegisterpropertyComponent implements OnInit {
       Property_Status:["", Validators.required],
       Property_Type:["", Validators.required]
     });
+    this.route.params.subscribe(params=>{
+      if(params && params.id){
+        let property = this.propertyService.get(params.id);
+        this.registerForm.setValue(property);
+      }
+    });
   }
   // convenience getter for easy access to form fields
   get f() {
