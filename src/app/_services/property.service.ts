@@ -14,4 +14,8 @@ export class PropertyService {
     console.log(Constant.SiteURL);
     return this.http.get<Property[]>(this.baseURL + `/properties/`);
   }
+    get(id:number) {
+    console.log(Constant.SiteURL);
+    return this.http.get<Property>(this.baseURL + `/properties/`+ id);
+  }
 }
