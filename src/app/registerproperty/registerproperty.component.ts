@@ -22,12 +22,12 @@ export class RegisterpropertyComponent implements OnInit {
   countries: Country[] = [];
   states: State[] = [];
   cities: City[] = [];
-  propertystatus:PropertyStatus[]=[];
-  propertytype:PropertyType[]=[];
+  propertystatus: PropertyStatus[] = [];
+  propertytype: PropertyType[] = [];
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private route:ActivatedRoute,
+    private route: ActivatedRoute,
     private authenticationService: AuthenticationService,
     private userService: UserService,
     private alertService: AlertService,
@@ -47,22 +47,24 @@ export class RegisterpropertyComponent implements OnInit {
     this.loadPropertyStatus();
     this.loadPropertyType();
     this.registerForm = this.formBuilder.group({
+      ID: [""],
       Name: ["", Validators.required],
       Description: ["", Validators.required],
       No_Of_BedRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
       No_Of_Floors: ["", Validators.required],
-      Country:["", Validators.required],
-      State:["", Validators.required],
-      City:["", Validators.required],
-      Property_Status:["", Validators.required],
-      Property_Type:["", Validators.required]
+      Country: ["", Validators.required],
+      State: ["", Validators.required],
+      City: ["", Validators.required],
+      Property_Status: ["", Validators.required],
+      Property_Type: ["", Validators.required]
     });
-    this.route.params.subscribe(params=>{
-      if(params && params.id){
-        let property = this.propertyService.get(params.id);
-        console.log(property);
-        this.registerForm.setValue(property);
+    this.route.params.subscribe(params => {
+      if (params && params.id) {
+        this.propertyService.get(params.id).subscribe(property => {
+          console.log(property);
+          this.registerForm.setValue(property);
+        });
       }
     });
   }
@@ -94,7 +96,7 @@ export class RegisterpropertyComponent implements OnInit {
         }
       );
   }
-   private loadAllCountry() {
+  private loadAllCountry() {
     this.masterService.getAllCountry().subscribe(countries => {
       this.countries = countries;
     });
