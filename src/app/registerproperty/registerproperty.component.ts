@@ -56,6 +56,7 @@ export class RegisterpropertyComponent implements OnInit {
     this.loadAllCity();
     this.loadPropertyStatus();
     this.loadPropertyType();
+    this.loadPropertyPurpose();
     this.registerForm = this.formBuilder.group({
       ID: [""],
       Name: ["", Validators.required],
