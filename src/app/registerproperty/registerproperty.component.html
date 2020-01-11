@@ -114,7 +114,7 @@
             <div class="form-group">
 							<label for="Property_Status">Property Purpose</label>
 							<select formControlName="Property_Purpose" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Property_Purpose.errors }">
-               <option *ngFor="let status of propertystatus" value={{status.ID}}>{{status.Name}}</option>
+               <option *ngFor="let purpose of propertypurpose" value={{purpose.ID}}>{{purpose.Name}}</option>
               </select>
 
 							<div *ngIf="submitted && f.Property_Purpose.errors" class="invalid-feedback">
