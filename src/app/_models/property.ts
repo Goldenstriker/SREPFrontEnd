@@ -4,6 +4,7 @@ import { City } from "./city";
 import { PropertyStatus } from "./propertystatus";
 import { PropertyType } from "./propertytype";
 import { PropertyPurpose } from "./propertypurpose";
+import { U } from "./user";
 export class Property {
   ID: number;
   Name: string;
@@ -19,5 +20,7 @@ export class Property {
   Property_Type: PropertyType;
   Property_Purpose: PropertyPurpose;
   AreaSqFt:number;
+  Price:number;
   Address:string;
+  UserCreatedBy:User;
 }
