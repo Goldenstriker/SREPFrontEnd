@@ -53,7 +53,7 @@ export class RegisterpropertyComponent implements OnInit {
       Name: ["", Validators.required],
       Description: ["", Validators.required],
       No_Of_BedRooms: ["", Validators.required],
-      No_Of_LiRooms: ["", Validators.required],
+      No_Of_LivingRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
       No_Of_Floors: ["", Validators.required],
       Country: ["", Validators.required],
