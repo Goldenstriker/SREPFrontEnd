@@ -2,7 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
-import { Country, State, City, PropertyType, PropertyStatus } from "../_models";
+import {
+  Country,
+  State,
+  City,
+  PropertyType,
+  PropertyStatus,
+  PropertyPurpose
+} from "../_models";
 import {
   AlertService,
   UserService,
@@ -24,6 +31,7 @@ export class RegisterpropertyComponent implements OnInit {
   cities: City[] = [];
   propertystatus: PropertyStatus[] = [];
   propertytype: PropertyType[] = [];
+  propertypurpose: PropertyPurpose[] = [];
   isEditForm: boolean = false;
   recordID: string = "";
   constructor(
@@ -93,7 +101,7 @@ export class RegisterpropertyComponent implements OnInit {
     if (this.isEditForm) {
       //recordID
       this.propertyService
-        .update(this.registerForm.value,this.recordID)
+        .update(this.registerForm.value, this.recordID)
         .pipe(first())
         .subscribe(
           data => {
@@ -145,7 +153,11 @@ export class RegisterpropertyComponent implements OnInit {
   private loadPropertyType() {
     this.masterService.getPropertyType().subscribe(propertytype => {
       this.propertytype = propertytype;
-      console.log(propertytype);
+    });
+  }
+  private loadPropertyPurpose() {
+    this.masterService.getPropertyPurpose().subscribe(propertypurpose => {
+      this.propertypurpose = propertypurpose;
     });
   }
 }
