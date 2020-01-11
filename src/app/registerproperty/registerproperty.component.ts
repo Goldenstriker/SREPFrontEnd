@@ -53,12 +53,16 @@ export class RegisterpropertyComponent implements OnInit {
       Name: ["", Validators.required],
       Description: ["", Validators.required],
       No_Of_BedRooms: ["", Validators.required],
+      No_Of_LiRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
       No_Of_Floors: ["", Validators.required],
       Country: ["", Validators.required],
       State: ["", Validators.required],
       City: ["", Validators.required],
       Property_Status: ["", Validators.required],
+      Property_Purpose: ["", Validators.required],
+      Address: ["", Validators.required],
+      Price: ["", Validators.required],
       Property_Type: ["", Validators.required]
     });
     this.route.params.subscribe(params => {
