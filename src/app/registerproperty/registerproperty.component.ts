@@ -63,6 +63,7 @@ export class RegisterpropertyComponent implements OnInit {
       Property_Purpose: ["", Validators.required],
       Address: ["", Validators.required],
       Price: ["", Validators.required],
+      AreaSqFt: ["", Validators.required],
       Property_Type: ["", Validators.required]
     });
     this.route.params.subscribe(params => {
