@@ -78,7 +78,7 @@
 				</article> <!-- card-group-item.// -->
 				<article class="card-group-item">
 					<header class="card-header">
-						<input type="text"  [(ngModel)]="searchText" />
+						<input type="text" style="display:none"  [(ngModel)]="searchText" />
 						<h6 class="title">Country</h6>
 					</header>
 					<div class="filter-content">
@@ -151,7 +151,10 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
+      <div class="card" *ngIf="properties">
 			<app-property *ngFor="let property of properties | filter: searchText" [property]="property"></app-property>
+      </div>
+      <div class="card" *ngIf="!properties">No Data Found</div>
 		</div>
 	</div>
 </div>
