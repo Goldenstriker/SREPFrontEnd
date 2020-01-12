@@ -100,7 +100,7 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let state of states">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" [id]="state.State_ID" (change)="toggleVisibility($event,state.State_ID,'State')" />
+								<input type="checkbox" class="custom-control-input" [id]="state.Name" (change)="toggleVisibility($event,state.State_ID,'State')" />
 								<label class="custom-control-label" [for]="state.State_ID">{{state.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
@@ -114,8 +114,8 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let city of cities">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" [id]="city.City_ID" (change)="toggleVisibility($event,city.City_ID,'City')" />
-								<label class="custom-control-label" [for]="city.City_ID">{{city.Name}}</label>
+								<input type="checkbox" class="custom-control-input" [id]="city.Name" (change)="toggleVisibility($event,city.City_ID,'City')" />
+								<label class="custom-control-label" [for]="city.Name">{{city.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
 					</div>
