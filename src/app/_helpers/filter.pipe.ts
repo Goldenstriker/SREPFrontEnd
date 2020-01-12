@@ -11,9 +11,11 @@ export class FilterPipe implements PipeTransform {
     //if (searchText.PropertyType.length == 0) return items;
     //searchText = searchText.toLowerCase();
     Object.keys(searchText).forEach(x => {
-      items = items.filter(it => {
-        return searchText[x].indexOf(it[x]) != -1;
-      });
+      if (searchText[x].length != 0) {
+        items = items.filter(it => {
+          return searchText[x].indexOf(it[x]) != -1;
+        });
+      }
     });
     /*return items.filter(it => {
       return searchText.PropertyType.indexOf(it.Property_Type) != -1;

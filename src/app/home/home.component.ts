@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     Country: [],
     State: [],
     City: [],
-    PropertyType: [],
-    PropertyStatus: []
+    Property_Type: [],
+    Property_Status: []
   });
   tempData: any = {};
   constructor(
