@@ -20,7 +20,6 @@ export class NavbarComponent implements OnInit {
         this.currentUser = x;
         this.userService.getCurrentLoggedIn().subscribe( (y:any) => {
           this.currentLoggedInUser = y.user;
-          console.log(y.user);
         });
       }
     });

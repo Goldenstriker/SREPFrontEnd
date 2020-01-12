@@ -34,6 +34,7 @@ export class RegisterpropertyComponent implements OnInit {
   propertypurpose: PropertyPurpose[] = [];
   isEditForm: boolean = false;
   recordID: string = "";
+  currentLoggedInUser: number = 0;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -48,6 +49,9 @@ export class RegisterpropertyComponent implements OnInit {
     if (!this.authenticationService.currentUserValue) {
       this.router.navigate(["/"]);
     }
+    this.userService.getCurrentLoggedIn().subscribe((y: any) => {
+      this.currentLoggedInUser = y.user_id;
+    });
   }
 
   ngOnInit() {
@@ -117,8 +121,10 @@ export class RegisterpropertyComponent implements OnInit {
           }
         );
     } else {
+      let property = this.registerForm.value;
+      property.UserCreatedBy = this.currentLoggedInUser;
       this.propertyService
-        .register(this.registerForm.value)
+        .register(property)
         .pipe(first())
         .subscribe(
           data => {
