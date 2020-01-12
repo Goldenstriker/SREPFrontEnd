@@ -8,10 +8,16 @@ export class FilterPipe implements PipeTransform {
     if (!items) return [];
     searchText = JSON.parse(searchText);
     //if (searchText.Country.length==0 || searchText.State.length==0 || searchText.City.length==0) return items;
-    if (searchText.PropertyType.length==0) return items;
+    //if (searchText.PropertyType.length == 0) return items;
     //searchText = searchText.toLowerCase();
-    return items.filter(it => {
-      return searchText.PropertyType.indexOf(it.Property_Type) != -1;
+    Object.keys(searchText).forEach(x => {
+      items = items.filter(it => {
+        return searchText[x].indexOf(it[x]) != -1;
+      });
     });
+    /*return items.filter(it => {
+      return searchText.PropertyType.indexOf(it.Property_Type) != -1;
+    });*/
+    return items;
   }
 }
