@@ -114,7 +114,7 @@
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let city of cities">
 								<span class="float-right badge badge-light round">52</span>
-								<input type="checkbox" class="custom-control-input" [id[]="city.City_ID" (change)="toggleVisibility($event,city.City_ID,'City')" />
+								<input type="checkbox" class="custom-control-input" [id]="city.City_ID" (change)="toggleVisibility($event,city.City_ID,'City')" />
 								<label class="custom-control-label" [for]="city.City_ID">{{city.Name}}</label>
 							</div> <!-- form-check.// -->
 						</div> <!-- card-body.// -->
