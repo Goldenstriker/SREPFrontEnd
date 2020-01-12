@@ -123,6 +123,7 @@ export class RegisterpropertyComponent implements OnInit {
     } else {
       let property = this.registerForm.value;
       property.UserCreatedBy = this.currentLoggedInUser;
+      property.UserCreatedDate = new Date().getDate();
       this.propertyService
         .register(property)
         .pipe(first())
