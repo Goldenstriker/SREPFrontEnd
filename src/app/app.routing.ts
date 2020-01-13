@@ -4,6 +4,7 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { RegisterpropertyComponent } from './registerproperty';
+import { DashboardComponent } from './dashboard';
 import { AuthGuard } from './_helpers';
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'registerproperty', component: RegisterpropertyComponent ,canActivate: [AuthGuard]},
     { path: 'registerproperty/:id', component: RegisterpropertyComponent ,canActivate: [AuthGuard]},
-    { path: 'dahsboard', component: RegisterpropertyComponent ,canActivate: [AuthGuard]},
+    { path: 'dahsboard', component: DashboardComponent ,canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

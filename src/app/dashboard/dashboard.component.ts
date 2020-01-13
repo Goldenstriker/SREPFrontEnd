@@ -1,6 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-
+import {
+  User,
+  Country,
+  Property,
+  State,
+  City,
+  PropertyType,
+  PropertyStatus
+} from "../_models";
 import {
   UserService,
   AuthenticationService,
