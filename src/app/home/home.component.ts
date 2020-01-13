@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     Property_Status: []
   });
   tempData: any = {};
+  currentLoggedInUser: string = "";
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -48,6 +49,9 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.currentUser = user;
       }
     );
+    this.userService.getCurrentLoggedIn().subscribe((y: any) => {
+      this.currentLoggedInUser = y.user_id;
+    });
   }
 
   ngOnInit() {

@@ -7,6 +7,7 @@ import { Property } from "../_models";
 })
 export class PropertyComponent implements OnInit {
   @Input() property: Property;
+  @Input() currentuser:string;
   constructor() {}
 
   ngOnInit() {}

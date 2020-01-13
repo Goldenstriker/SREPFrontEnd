@@ -94,7 +94,7 @@
 						</div> <!-- card-body.// -->
 					</div>
 				</article> <!-- card-group-item.// -->
-				<article class="card-group-item ">
+				<article class="card-group-item mb-2">
 					<header class="card-header">
 						<h6 class="title">Property Type</h6>
 					</header>
@@ -111,7 +111,8 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<app-property *ngFor="let property of properties | filter: searchText" [property]="property">
+			<app-property *ngFor="let property of properties | filter: searchText" [property]="property"
+				[currentuser]="currentLoggedInUser">
 			</app-property>
 			<div class="card" *ngIf="properties.length == 0">
 				<header class="card-header">
