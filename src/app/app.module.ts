@@ -17,6 +17,7 @@ import { LoaderService } from './_services';
 import { PropertyComponent } from './property';
 import { LoaderComponent } from './loader';
 import { FilterPipe } from './_helpers';
+import { DashboardComponent } from './dashboard';
 @NgModule({
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import { FilterPipe } from './_helpers';
     RegisterpropertyComponent,
     PropertyComponent,
     LoaderComponent,
-    FilterPipe
+    FilterPipe,
+    DashboardComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
