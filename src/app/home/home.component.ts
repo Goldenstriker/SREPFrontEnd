@@ -148,7 +148,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     this.loading = true;
     this.propertyService
-      .search(this.searchform.value)
+      .search(this.searchform.value.)
       .pipe()
       .subscribe(
         data => {
