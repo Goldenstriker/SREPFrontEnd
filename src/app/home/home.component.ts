@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.currentLoggedInUser = y.user_id;
     });
   }
+  
 
   ngOnInit() {
     //this.loadAllUsers();
@@ -138,6 +139,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   onSubmit() {
     this.submitted = true;
+    console.log(this.searchform.value)
     // stop here if form is invalid
     if (this.searchform.invalid) {
       return;
