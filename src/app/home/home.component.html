@@ -111,10 +111,10 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<div class="card ">
+			<div class="card mb-2">
 				<div class="card-body">
 					<form class="form-inline " [formGroup]="searchform" (ngSubmit)="onSubmit()">
-						<div class="form-group mx-2">
+						<div class="form-group w-auto">
 							<input type="text" formControlName="search" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.search.errors }" />
 							<div *ngIf="submitted && f.search.errors" class="invalid-feedback">
 								<div *ngIf="f.search.errors.required">Text is required</div>
