@@ -111,7 +111,7 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<form  [formGroup]="searchform" (ngSubmit)="onSubmit()">
+			<form class="form-inline" [formGroup]="searchform" (ngSubmit)="onSubmit()">
 				<div class="form-group">
 					<input type="text" formControlName="search" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.search.errors }" />
 					<div *ngIf="submitted && f.search.errors" class="invalid-feedback">
