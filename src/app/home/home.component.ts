@@ -148,11 +148,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     this.loading = true;
     this.propertyService
-      .search(this.searchform.value.)
+      .search(this.searchform.value.search)
       .pipe()
       .subscribe(
         data => {
           this.properties = data;
+          this.loading = false;
         },
         error => {
           this.loading = false;
