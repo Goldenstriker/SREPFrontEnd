@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'registerproperty', component: RegisterpropertyComponent ,canActivate: [AuthGuard]},
     { path: 'registerproperty/:id', component: RegisterpropertyComponent ,canActivate: [AuthGuard]},
-    { path: 'dahsboard', component: DashboardComponent ,canActivate: [AuthGuard]},
+    { path: 'dashboard', component: DashboardComponent ,canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
