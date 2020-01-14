@@ -21,4 +21,10 @@ export class PropertyService {
   update(property: Property, id: string) {
     return this.http.put(this.baseURL + `/properties/` + id + "/", property);
   }
+
+  search(query: string) {
+    return this.http.get<Property[]>(
+      this.baseURL + `/property/?search=` + query
+    );
+  }
 }
