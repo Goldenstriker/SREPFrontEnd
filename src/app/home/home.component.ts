@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { first } from "rxjs/operators";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import {
   User,
@@ -20,6 +21,8 @@ import {
 
 @Component({ templateUrl: "home.component.html" })
 export class HomeComponent implements OnInit, OnDestroy {
+  loading = false;
+  submitted = false;
   currentUser: User;
   currentUserSubscription: Subscription;
   users: User[] = [];
@@ -38,7 +41,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   });
   tempData: any = {};
   currentLoggedInUser: string = "";
+  searchform: FormGroup;
   constructor(
+    private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
     private userService: UserService,
     private masterService: MasterService,
@@ -62,6 +67,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.loadPropertyStatus();
     this.loadPropertyType();
     this.loadAllProperty();
+    this.searchform = this.formBuilder.group({
+      search: ["", Validators.required]
+    });
   }
 
   ngOnDestroy() {
@@ -127,5 +135,22 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.tempData[prop].push(data);
     else this.tempData[prop].pop(data);
     this.searchText = JSON.stringify(this.tempData);
+  }
+  onSubmit() {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.searchform.invalid) {
+      return;
+    }
+    this.loading = true;
+    this.propertyService
+      .update(this.searchform.value)
+      .pipe(first())
+      .subscribe(
+        data => {},
+        error => {
+          this.loading = false;
+        }
+      );
   }
 }
