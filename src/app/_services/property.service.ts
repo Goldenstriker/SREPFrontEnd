@@ -27,4 +27,9 @@ export class PropertyService {
       this.baseURL + `/property/?search=` + query
     );
   }
+  getPropertyOfUser(query: string) {
+    return this.http.get<Property[]>(
+      this.baseURL + `/propertyforuser/?search=` + query
+    );
+  }
 }

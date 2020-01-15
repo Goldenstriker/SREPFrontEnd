@@ -23,6 +23,8 @@ import {
 export class DashboardComponent implements OnInit {
   currentUser: User;
   currentUserSubscription: Subscription;
+  currentLoggedInUser: number;
+  properties: Property[] = [];
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -38,6 +40,15 @@ export class DashboardComponent implements OnInit {
       this.currentLoggedInUser = y.user_id;
     });
   }
+  ngOnInit() {
 
-  ngOnInit() {}
+    this.loadAllProperty();
+  }
+  private loadAllProperty() {
+    this.propertyService
+      .getPropertyOfUser(this.currentLoggedInUser)
+      .subscribe(properties => {
+        this.properties = properties;
+      });
+  }
 }
