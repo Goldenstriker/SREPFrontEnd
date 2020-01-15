@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
   ) {
     this.userService.currentLoggedInUser.subscribe(x => {
       if (x) {
-        this.currentLoggedInUser = x.user__;
+        this.currentLoggedInUser = x.user_id;
       }
     });
   }

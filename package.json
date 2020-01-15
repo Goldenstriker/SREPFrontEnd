@@ -11,6 +11,7 @@
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
     "bootstrap": "^4.4.1",
+    "canvasjs": "^1.8.3",
     "core-js": "^3.6.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
