@@ -54,8 +54,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.currentUser = user;
       }
     );
-    this.userService.getCurrentLoggedIn().subscribe((y: any) => {
-      this.currentLoggedInUser = y.user_id;
+    this.userService.currentLoggedInUser.subscribe(x=>{
+      if(x){
+        this.currentLoggedInUser = x.user;
+      }
     });
   }
 

@@ -49,8 +49,10 @@ export class RegisterpropertyComponent implements OnInit {
     if (!this.authenticationService.currentUserValue) {
       this.router.navigate(["/"]);
     }
-    this.userService.getCurrentLoggedIn().subscribe((y: any) => {
-      this.currentLoggedInUser = y.user_id;
+    this.userService.currentLoggedInUser.subscribe(x=>{
+      if(x){
+        this.currentLoggedInUser = x.user;
+      }
     });
   }
 
