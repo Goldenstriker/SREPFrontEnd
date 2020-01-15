@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as CanvasJS from './canvasjs.min';
+import * as CanvasJS from 'canvasjs';
+
 @Component({
   selector: 'app-management',
   templateUrl: './management.component.html',
