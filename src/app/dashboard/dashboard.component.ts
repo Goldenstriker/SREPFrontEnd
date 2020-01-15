@@ -36,11 +36,11 @@ export class DashboardComponent implements OnInit {
         this.currentUser = user;
       }
     );
+  }
+  ngOnInit() {
     this.userService.getCurrentLoggedIn().subscribe((y: any) => {
       this.currentLoggedInUser = y.user_id;
     });
-  }
-  ngOnInit() {
     this.loadAllProperty();
   }
   private loadAllProperty() {
