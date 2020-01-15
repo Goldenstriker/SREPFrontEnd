@@ -41,7 +41,6 @@ export class DashboardComponent implements OnInit {
     });
   }
   ngOnInit() {
-
     this.loadAllProperty();
   }
   private loadAllProperty() {
