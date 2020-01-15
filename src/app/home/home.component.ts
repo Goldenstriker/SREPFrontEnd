@@ -105,7 +105,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   //propertyService
   private loadAllProperty() {
-    this.propertyService.getAll().subscribe(properties => {
+    this.propertyService.search("").subscribe(properties => {
       this.properties = properties;
     });
   }
