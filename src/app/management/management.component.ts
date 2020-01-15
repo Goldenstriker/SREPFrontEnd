@@ -115,7 +115,6 @@ export class ManagementComponent implements OnInit {
       // properties;
       let dataCountbyType = [];
       let data = properties.map(data => {
-        
         return { x: data.AreaSqFt, y: data.Price };
       });
       /*let chart = new CanvasJS.Chart("chartContainer", {

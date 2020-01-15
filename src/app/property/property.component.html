@@ -1,6 +1,6 @@
 <div class="card mb-4">
-	<div class="card-header">{{property.Name}}</div>
 	<div class="card-body">
+		<h5 class="card-title">{{property.Name}}</h5>
 		<table class="table table-bordered">
 			<tr>
 				<td>Name</td>
@@ -14,6 +14,7 @@
 	</div>
 	<div class="card-footer">
 		<i class="fa fa-angular"></i>
-		<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary" [routerLink]="['/registerproperty',property.ID]">Edit</a>
+		<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary"
+			[routerLink]="['/registerproperty',property.ID]">Edit</a>
 	</div>
 </div>
