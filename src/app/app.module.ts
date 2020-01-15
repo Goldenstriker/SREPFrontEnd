@@ -18,7 +18,7 @@ import { PropertyComponent } from './property';
 import { LoaderComponent } from './loader';
 import { FilterPipe } from './_helpers';
 import { DashboardComponent } from './dashboard';
-import { ManagementComponent } from './management/management.component';
+import { ManagementComponent } from './management';
 @NgModule({
   imports: [
     BrowserModule,
