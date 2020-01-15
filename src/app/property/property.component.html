@@ -3,12 +3,8 @@
 		<h5 class="card-title">{{property.Name}}<a *ngIf="currentuser == property.UserCreatedBy"
 				class="float-right btn btn-outline-primary" [routerLink]="['/registerproperty',property.ID]">Edit</a>
 		</h5>
-
+		<p class="card-text">{{property.Description}}</p>
 		<table class="table table-bordered">
-			<tr>
-				<td>Description</td>
-				<td>{{property.Description}}</td>
-			</tr>
 			<tr>
 				<td>No. of Living Room</td>
 				<td>{{property.No_Of_LivingRooms}}</td>
