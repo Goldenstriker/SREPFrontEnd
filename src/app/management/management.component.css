@@ -1,2 +1,7 @@
 div#chartContainer1 div a.canvasjs-chart-credit{display:none!important;}
-
+.card-title {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    font-size: 26px;
+    font-weight: 300;
+}

@@ -66,6 +66,47 @@ export class ManagementComponent implements OnInit {
         }
       ]
     });
+    let usersStateBarChart = new CanvasJS.Chart("users-state-bar-chart", {
+      animationDuration: 800,
+      animationEnabled: true,
+      backgroundColor: "transparent",
+      colorSet: "customColorSet",
+      axisX: {
+        labelFontColor: "#717171",
+        labelFontSize: 18,
+        lineThickness: 0,
+        tickThickness: 0
+      },
+      axisY: {
+        gridThickness: 0,
+        lineThickness: 0,
+        tickThickness: 0,
+        valueFormatString: " "
+      },
+      toolTip: {
+        cornerRadius: 0,
+        fontStyle: "normal"
+      },
+      data: [
+        {
+          indexLabelFontColor: "#717171",
+          indexLabelFontFamily: "calibri",
+          indexLabelFontSize: 18,
+          indexLabelPlacement: "outside",
+          type: "bar",
+          dataPoints: [
+            { y: 16, label: "Others" },
+            { y: 4, label: "Pennsylvania" },
+            { y: 5, label: "Florida" },
+            { y: 7, label: "Texas" },
+            { y: 11, label: "New York" },
+            { y: 12, label: "California" }
+          ]
+        }
+      ]
+    });
+
+    usersStateBarChart.render();
     chart1.render();
     chart.render();
   }
