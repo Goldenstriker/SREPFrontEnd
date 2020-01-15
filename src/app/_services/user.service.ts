@@ -1,12 +1,23 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
+import { BehaviorSubject, Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import { User } from "../_models";
 import { Constant } from "../constants";
 
 @Injectable({ providedIn: "root" })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  private currentLoggedInUserSubject: BehaviorSubject<any>;
+  public currentLoggedInUser: Observable<any>;
+  constructor(private http: HttpClient) {
+    this.currentLoggedInUserSubject = new BehaviorSubject<any>(
+      JSON.parse(localStorage.getItem("currentloggedinuser"))
+    );
+    this.currentLoggedInUser = this.currentLoggedInUserSubject.asObservable();
+  }
+  public get currentLoggedInValue(): any {
+    return this.currentLoggedInUserSubject.value;
+  }
   public baseURL: string = Constant.SiteURL;
   getAll() {
     console.log(Constant.SiteURL);
@@ -23,6 +34,14 @@ export class UserService {
   }
 
   getCurrentLoggedIn() {
-    return this.http.get<any>(this.baseURL + `/current_user/`);
+    return this.http.get<any>(this.baseURL + `/current_user/`).pipe(
+      map(user => {
+        if (user && user.user_id) {
+          localStorage.setItem("currentloggedinuser", JSON.stringify(user));
+          this.currentLoggedInUserSubject.next(user);
+        }
+        return user;
+      })
+    );
   }
 }
