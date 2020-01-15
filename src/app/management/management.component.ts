@@ -17,7 +17,9 @@ export class ManagementComponent implements OnInit {
   private loadAllProperty() {
     this.propertyService.getAll().subscribe(properties => {
       // properties;
-
+      console.log(properties.map(data => {
+              return { x: data.AreaSqFt, y: data.Price };
+            }));
       let chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         exportEnabled: true,
@@ -38,9 +40,7 @@ export class ManagementComponent implements OnInit {
           {
             type: "scatter",
             toolTipContent: "<b>Area: </b>{x} sq.ft<br/><b>Price: </b>${y}k",
-            dataPoints: properties.map(data => {
-              return { x: data.AreaSqFt, y: data.Price };
-            })
+            dataPoints: []
           }
         ]
       });
