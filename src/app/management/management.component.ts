@@ -113,7 +113,9 @@ export class ManagementComponent implements OnInit {
   private loadAllProperty() {
     this.propertyService.getAll().subscribe(properties => {
       // properties;
+      let dataCountbyType = [];
       let data = properties.map(data => {
+        
         return { x: data.AreaSqFt, y: data.Price };
       });
       /*let chart = new CanvasJS.Chart("chartContainer", {
