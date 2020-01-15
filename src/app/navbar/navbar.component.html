@@ -20,12 +20,14 @@
 					</li>
 				</ng-container>
 				<ng-container *ngIf="currentUser">
+           <li class="nav-item">
+						<a class="nav-link" routerLink="/management">Management</a>
+					</li>
 					<li class="nav-item">
-						<a class="navbar-brand"
+						<a class="nav-link"
 							routerLink="/dashboard"><span class="badge badge-primary mr-2">{{currentLoggedInUser}}</span></a>
 					</li>
 					<li class="nav-item">
-
 						<a class="nav-link" (click)="logout()">Logout</a>
 					</li>
 				</ng-container>
