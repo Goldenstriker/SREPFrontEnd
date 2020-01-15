@@ -4,3 +4,10 @@
     font-size: 26px;
     font-weight: 300;
 }
+.card, .card-footer {
+    background-color: inherit;
+    border: none;
+}
+.card-block {
+    padding: 1.25rem;
+}
