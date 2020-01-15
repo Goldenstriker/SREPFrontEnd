@@ -21,8 +21,6 @@ import {
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  currentUser: User;
-  currentUserSubscription: Subscription;
   currentLoggedInUser: number;
   properties: Property[] = [];
   constructor(
@@ -31,16 +29,13 @@ export class DashboardComponent implements OnInit {
     private masterService: MasterService,
     private propertyService: PropertyService
   ) {
-    this.currentUserSubscription = this.authenticationService.currentUser.subscribe(
-      user => {
-        this.currentUser = user;
+    this.userService.currentLoggedInUser.subscribe(x => {
+      if (x) {
+        this.currentLoggedInUser = x.user__;
       }
-    );
+    });
   }
   ngOnInit() {
-    this.userService.getCurrentLoggedIn().subscribe((y: any) => {
-      this.currentLoggedInUser = y.user_id;
-    });
     this.loadAllProperty();
   }
   private loadAllProperty() {
