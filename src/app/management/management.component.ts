@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import * as CanvasJS from "canvasjs";
+import * as CanvasJS from "../canvasjs.";
 import { Property } from "../_models";
 import { PropertyService } from "../_services";
 import { map } from "rxjs/operators";
