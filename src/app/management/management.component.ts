@@ -22,6 +22,7 @@ export class ManagementComponent implements OnInit {
       title: {
         text: ""
       },
+      
       data: [
         {
           type: "pie",
@@ -43,8 +44,15 @@ export class ManagementComponent implements OnInit {
       title: {
         text: ""
       },
+      legend: {
+        fontFamily: "calibri",
+        fontSize: 14,
+        horizontalAlign: "left",
+        verticalAlign: "center"
+      },
       data: [
         {
+          legendMarkerType: "square",
           type: "pie",
           showInLegend: true,
           toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
@@ -58,6 +66,12 @@ export class ManagementComponent implements OnInit {
       title: {
         text: "Email Categories",
         horizontalAlign: "left"
+      },
+      legend: {
+        fontFamily: "calibri",
+        fontSize: 14,
+        horizontalAlign: "left",
+        verticalAlign: "center"
       },
       data: [
         {
