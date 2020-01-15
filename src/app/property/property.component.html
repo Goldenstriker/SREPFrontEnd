@@ -1,32 +1,31 @@
 <div class="card mb-4">
 	<div class="card-body">
-		<h5 class="card-title">{{property.Name}}</h5>
+		<h5 class="card-title">{{property.Name}}<a *ngIf="currentuser == property.UserCreatedBy"
+				class="float-right btn btn-outline-primary" [routerLink]="['/registerproperty',property.ID]">Edit</a>
+		</h5>
+
 		<table class="table table-bordered">
 			<tr>
 				<td>Description</td>
 				<td>{{property.Description}}</td>
 			</tr>
-      <tr>
+			<tr>
 				<td>No. of Living Room</td>
 				<td>{{property.No_Of_LivingRooms}}</td>
 			</tr>
-      <tr>
+			<tr>
 				<td>No. of Bed Room</td>
 				<td>{{property.No_Of_BedRooms}}</td>
 			</tr>
-      <tr>
+			<tr>
 				<td>No. of Floors</td>
 				<td>{{property.No_Of_Floors}}</td>
 			</tr>
-      <tr>
+			<tr>
 				<td>Available for</td>
 				<td>{{property.Property_Purpose.Name}}</td>
 			</tr>
 		</table>
 	</div>
-	<div class="card-footer">
-		<i class="fa fa-angular"></i>
-		<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary"
-			[routerLink]="['/registerproperty',property.ID]">Edit</a>
-	</div>
+	
 </div>
