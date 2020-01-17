@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.userService.currentLoggedInUser.subscribe(x=>{
       if(x){
         this.currentLoggedInUser = x.user_id;
-        this.userprofile = x.user.userprofile;
+        this.userprofile = x.userprofile;
       }
     });
   }
@@ -168,7 +168,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public addToFavouite(e){
     if(this.userprofile.LikedProperties.indexOf(e)!=-1){
       this.userprofile.LikedProperties.push(e);
-      console.log(this.userprofile)
+      console.log(this.userprofile);
     }
   }
 }
