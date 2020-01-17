@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { User } from "../_models";
+import { User, UserProfile } from "../_models";
 import { Constant } from "../constants";
 
 @Injectable({ providedIn: "root" })
@@ -20,7 +20,6 @@ export class UserService {
   }
   public baseURL: string = Constant.SiteURL;
   getAll() {
-    console.log(Constant.SiteURL);
     return this.http.get<User[]>(this.baseURL + `/users/`);
   }
 
@@ -45,7 +44,6 @@ export class UserService {
     );
   }
   getAllUserProfile() {
-    console.log(Constant.SiteURL);
-    return this.http.get<User[]>(this.baseURL + `/users/`);
+    return this.http.get<UserProfile[]>(this.baseURL + `/userpr/`);
   }
 }
