@@ -131,7 +131,7 @@
 				</div>
 			</div>
 			<app-property *ngFor="let property of properties | filter: searchText" [property]="property"
-				[currentuser]="currentLoggedInUser">
+				[currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)">
 			</app-property>
 			<div class="card" *ngIf="properties.length == 0">
 				<header class="card-header">

@@ -162,4 +162,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       );
   }
+  public addToFavouite(e){
+    console.log(e)
+  }
 }
