@@ -10,7 +10,8 @@ import {
   State,
   City,
   PropertyType,
-  PropertyStatus
+  PropertyStatus,
+  UserProfile
 } from "../_models";
 import {
   UserService,
@@ -42,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   tempData: any = {};
   currentLoggedInUser: string = "";
   searchform: FormGroup;
+  userprofile : UserProfile;
   constructor(
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
@@ -57,6 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.userService.currentLoggedInUser.subscribe(x=>{
       if(x){
         this.currentLoggedInUser = x.user_id;
+        this.userprofile = x.user.userprofile;
       }
     });
   }
@@ -163,6 +166,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       );
   }
   public addToFavouite(e){
-    console.log(e);
+    if(this.userprofile.LikedProperties.indexOf(e)!=-1){
+      this.userprofile.LikedProperties.push(e);
+      console.log(this.userprofile)
+    }
   }
 }

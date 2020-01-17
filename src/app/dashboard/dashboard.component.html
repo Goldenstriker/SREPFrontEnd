@@ -16,13 +16,12 @@
 			</div>
 		</div>
 	</div>
-  	<div class="row mt-4">
+	<div class="row mt-4">
 		<div class="col">
 			<div class="card mb-2">
 				<div class="card-body">
 					<h5 class="card-title">Favourite Property</h5>
-					<app-property *ngFor="let property of favouriteproperties" [property]="property"
-						>
+					<app-property *ngFor="let property of favouriteproperties" [property]="property">
 					</app-property>
 					<div class="card" *ngIf="properties.length == 0">
 						<header class="card-header">
