@@ -11,7 +11,8 @@ export class PropertyComponent implements OnInit {
   @Output() propertyid = new EventEmitter<number>();
   constructor() {}
   ngOnInit() {}
-  public addToFavourite(){
+  public addToFavourite(e){
+    console.log(e)
     this.propertyid.emit(this.property.ID)
   }
 }
