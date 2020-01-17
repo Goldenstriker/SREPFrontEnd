@@ -23,6 +23,7 @@ import {
 export class DashboardComponent implements OnInit {
   currentLoggedInUser: number;
   properties: Property[] = [];
+  favouriteproperties: Property[] = [];
   favourite = [];
   constructor(
     private authenticationService: AuthenticationService,
@@ -41,10 +42,13 @@ export class DashboardComponent implements OnInit {
     this.loadAllProperty();
   }
   private loadAllProperty() {
-    this.propertyService
-      .getPropertyOfUser(this.currentLoggedInUser)
-      .subscribe(properties => {
-        this.properties = properties;
+    this.propertyService.getAll().subscribe(properties => {
+      this.favouriteproperties = properties.filter(x => {
+        return this.favourite.indexOf(x.ID) != -1;
       });
+      this.properties = properties.filter(x => {
+        return x.ID != this.currentLoggedInUser;
+      });
+    });
   }
 }
