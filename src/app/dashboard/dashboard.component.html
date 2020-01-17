@@ -22,7 +22,7 @@
 				<div class="card-body">
 					<h5 class="card-title">Favourite Property</h5>
 					<app-property *ngFor="let property of favouriteproperties" [property]="property"
-						[currentuser]="currentLoggedInUser">
+						>
 					</app-property>
 					<div class="card" *ngIf="properties.length == 0">
 						<header class="card-header">
