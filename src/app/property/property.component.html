@@ -1,10 +1,11 @@
 <div class="card mb-4">
 	<div class="card-body">
 		<h5 class="card-title">{{property.Name}}
-			<a class="float-right btn btn-outline-primary ml-2"
-				[routerLink]="['/registerproperty',property.ID]" (click)="">Like</a>
 			<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary"
 				[routerLink]="['/registerproperty',property.ID]">Edit</a>
+			<button	class="float-right btn btn-outline-primary ml-2"
+				(click)="addToFavourite()">Like</button>
+
 		</h5>
 		<p class="card-text">{{property.Description}}</p>
 		<p class="card-text">{{property.Address}}</p>
