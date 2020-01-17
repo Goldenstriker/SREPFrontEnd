@@ -6,3 +6,4 @@ export * from './property';
 export * from './propertytype';
 export * from './propertystatus';
 export * from './propertypurpose';
+export * from './
