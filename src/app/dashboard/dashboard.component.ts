@@ -23,6 +23,7 @@ import {
 export class DashboardComponent implements OnInit {
   currentLoggedInUser: number;
   properties: Property[] = [];
+  favourite = [];
   constructor(
     private authenticationService: AuthenticationService,
     private userService: UserService,
@@ -32,6 +33,7 @@ export class DashboardComponent implements OnInit {
     this.userService.currentLoggedInUser.subscribe(x => {
       if (x) {
         this.currentLoggedInUser = x.user_id;
+        this.favourite = x.userprofile.LikedProperties;
       }
     });
   }

@@ -1,10 +1,26 @@
 <div class="container">
 	<div class="row mt-4">
-		<div class="col-sm-4">
-		</div>
-		<div class="col-sm-8">
+		<div class="col">
 			<div class="card mb-2">
 				<div class="card-body">
+					<h5 class="card-title">Property Added by you</h5>
+					<app-property *ngFor="let property of properties" [property]="property"
+						[currentuser]="currentLoggedInUser">
+					</app-property>
+					<div class="card" *ngIf="properties.length == 0">
+						<header class="card-header">
+							<h6 class="title text-center">No Data Found</h6>
+						</header>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<div class="row mt-4">
+		<div class="col">
+			<div class="card mb-2">
+				<div class="card-body">
+					<h5 class="card-title">Favourite Property</h5>
 					<app-property *ngFor="let property of properties" [property]="property"
 						[currentuser]="currentLoggedInUser">
 					</app-property>

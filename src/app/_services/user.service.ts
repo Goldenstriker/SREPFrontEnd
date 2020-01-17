@@ -44,6 +44,6 @@ export class UserService {
     );
   }
   getAllUserProfile() {
-    return this.http.get<UserProfile[]>(this.baseURL + `/userpr/`);
+    return this.http.get<UserProfile[]>(this.baseURL + `/userprofile/`);
   }
 }
