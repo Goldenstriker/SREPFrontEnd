@@ -3,7 +3,7 @@
 		<h5 class="card-title">{{property.Name}}
 			<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary"
 				[routerLink]="['/registerproperty',property.ID]">Edit</a>
-			<button	class="float-right btn btn-outline-primary ml-2"
+			<button	class="float-right btn btn-outline-primary m-2"
 				(click)="addToFavourite()">Like</button>
 
 		</h5>
