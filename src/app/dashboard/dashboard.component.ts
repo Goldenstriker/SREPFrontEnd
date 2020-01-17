@@ -47,7 +47,8 @@ export class DashboardComponent implements OnInit {
         return this.favourite.indexOf(x.ID) != -1;
       });
       this.properties = properties.filter(x => {
-        return x.ID != this.currentLoggedInUser;
+        console.log(x.UserCreatedBy);
+        return x.UserCreatedBy == this.currentLoggedInUser;
       });
     });
   }
