@@ -46,4 +46,7 @@ export class UserService {
   getAllUserProfile() {
     return this.http.get<UserProfile[]>(this.baseURL + `/userprofile/`);
   }
+  update(userprofile: UserProfile, id: string) {
+    return this.http.put(this.baseURL + `/userprofile/` + id + "/", userprofile);
+  }
 }

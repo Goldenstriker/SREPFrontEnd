@@ -168,7 +168,14 @@ export class HomeComponent implements OnInit, OnDestroy {
   public addToFavouite(e) {
     if (this.userprofile.LikedProperties.indexOf(e) == -1) {
       this.userprofile.LikedProperties.push(e);
-      console.log(this.userprofile);
+      this.userService
+        .update(this.userprofile)
+        .pipe(first())
+        .subscribe(userprofile => {
+          let user = JSON.parse(localStorage.getItem("currentloggedinuser"));
+          user.userprofile = userprofile;
+          localStorage.setItem("currentloggedinuser", JSON.stringify(user));
+        });
     }
   }
 }

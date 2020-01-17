@@ -12,7 +12,7 @@ export class PropertyComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
   public addToFavourite(e){
-    console.log(e)
+    console.log(e);
     this.propertyid.emit(this.property.ID)
   }
 }
