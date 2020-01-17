@@ -1,9 +1,9 @@
 <div class="card mb-4">
 	<div class="card-body">
 		<h5 class="card-title">{{property.Name}}
-			<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary"
+			<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary ml-2"
 				[routerLink]="['/registerproperty',property.ID]">Edit</a>
-			<button	class="float-right btn btn-outline-primary m-2"
+			<button	class="float-right btn btn-outline-primary"
 				(click)="addToFavourite()">Like</button>
 
 		</h5>
