@@ -44,4 +44,8 @@ export class UserService {
       })
     );
   }
+  getAllUserProfile() {
+    console.log(Constant.SiteURL);
+    return this.http.get<User[]>(this.baseURL + `/users/`);
+  }
 }
