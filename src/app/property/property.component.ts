@@ -10,6 +10,7 @@ export class PropertyComponent implements OnInit {
   @Input() currentuser:string;
   @Output() propertyid = new EventEmitter<number>();
   clicked: boolean = false;
+  @Input() animationDelay :number;
   constructor() {}
   ngOnInit() {}
   public addToFavourite(e){

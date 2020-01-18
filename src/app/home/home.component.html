@@ -16,7 +16,7 @@
 <div class="container">
 	<div class="row mt-4">
 		<div class="col-sm-4">
-			<div class="card ">
+			<div class="card">
 				<article class="card-group-item">
 					<header class="card-header">
 						<h6 class="title">Range input </h6>
@@ -130,8 +130,8 @@
 					</form>
 				</div>
 			</div>
-			<app-property *ngFor="let property of properties | filter: searchText" [property]="property"
-				[currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)">
+			<app-property *ngFor="let property of properties, let i = index | filter: searchText" [property]="property"
+				[currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)" [animationDelay]="i" >
 			</app-property>
 			<div class="card" *ngIf="properties.length == 0">
 				<header class="card-header">
