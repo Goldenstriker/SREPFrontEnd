@@ -9,10 +9,12 @@ export class PropertyComponent implements OnInit {
   @Input() property: Property;
   @Input() currentuser:string;
   @Output() propertyid = new EventEmitter<number>();
+  clicked: boolean = false;
   constructor() {}
   ngOnInit() {}
   public addToFavourite(e){
     console.log(e);
+    this.clicked = true;
     this.propertyid.emit(this.property.ID)
   }
 }

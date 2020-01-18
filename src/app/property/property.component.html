@@ -4,7 +4,7 @@
 			<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary ml-2"
 				[routerLink]="['/registerproperty',property.ID]">Edit</a>
 			<button	class="float-right btn btn-outline-primary"
-				(click)="addToFavourite($event)">Like</button>
+				(click)="addToFavourite($event)" [disabled]="">Like</button>
 
 		</h5>
 		<p class="card-text">{{property.Description}}</p>
