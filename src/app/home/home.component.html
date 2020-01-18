@@ -130,7 +130,7 @@
 					</form>
 				</div>
 			</div>
-			<app-property *ngFor="let property of properties, let i = index | filter: searchText" [property]="property"
+			<app-property *ngFor="let property of properties | filter: searchText, let i = index" [property]="property"
 				[currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)" [animationDelay]="i" >
 			</app-property>
 			<div class="card" *ngIf="properties.length == 0">
