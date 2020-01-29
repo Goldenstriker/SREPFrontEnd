@@ -32,4 +32,7 @@ export class PropertyService {
       this.baseURL + `/propertyforuser/?search=` + query
     );
   }
+  getChartData() {
+    return this.http.get<any>(this.baseURL + `/chartdata/`);
+  }
 }

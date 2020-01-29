@@ -11,6 +11,8 @@ import { map } from "rxjs/operators";
 })
 export class ManagementComponent implements OnInit {
   properties: Property[] = [];
+  property_purposeChartData = [];
+  property_typeChartData = [];
   constructor(private propertyService: PropertyService) {}
 
   ngOnInit() {
@@ -111,12 +113,18 @@ export class ManagementComponent implements OnInit {
     chart.render();
   }
   private loadAllProperty() {
-    this.propertyService.getAll().subscribe(properties => {
-      // properties;
-      let dataCountbyType = [];
-      let data = properties.map(data => {
-        return { x: data.AreaSqFt, y: data.Price };
-      });
+    this.propertyService.getChartData().subscribe(data => {
+        let property_type = JSON.parse(data["property_type"]);
+        let property_purpose = JSON.parse(data["property_purpose"]);
+        console.log(property_type);
+        
+        Object.keys(property_type).forEach(x=>{
+         this.property_typeChartData.push({ y: property_type[x], name: x });
+        });
+      
+        Object.keys(property_purpose).forEach(x=>{
+          this.property_purposeChartData.push({ y: property_purpose[x], name: x });
+        });
       /*let chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         exportEnabled: false,
