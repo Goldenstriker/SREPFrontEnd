@@ -17,7 +17,22 @@ export class ManagementComponent implements OnInit {
 
   ngOnInit() {
     this.loadAllProperty();
-    let chart = new CanvasJS.Chart("chartContainer1", {
+    
+  }
+  private loadAllProperty() {
+    this.propertyService.getChartData().subscribe(data => {
+        let property_type = JSON.parse(data["property_type"]);
+        let property_purpose = JSON.parse(data["property_purpose"]);
+        console.log(property_type);
+        
+        Object.keys(property_type).forEach(x=>{
+         this.property_typeChartData.push({ y: property_type[x], name: x });
+        });
+      
+        Object.keys(property_purpose).forEach(x=>{
+          this.property_purposeChartData.push({ y: property_purpose[x], name: x });
+        });
+      let chart = new CanvasJS.Chart("chartContainer1", {
       theme: "light2",
       animationEnabled: true,
       exportEnabled: false,
@@ -36,11 +51,7 @@ export class ManagementComponent implements OnInit {
           showInLegend: true,
           toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
           indexLabel: "{name} - #percent%",
-          dataPoints: [
-            { y: 450, name: "Sold" },
-            { y: 500, name: "Available" },
-            { y: 300, name: "On Hold" }
-          ]
+          dataPoints: this.property_typeChartData
         }
       ]
     });
@@ -64,7 +75,7 @@ export class ManagementComponent implements OnInit {
           showInLegend: true,
           toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
           indexLabel: "{name} - #percent%",
-          dataPoints: [{ y: 450, name: "Sell" }, { y: 500, name: "Rent" }]
+          dataPoints: this.property_purposeChartData
         }
       ]
     });
@@ -111,45 +122,6 @@ export class ManagementComponent implements OnInit {
     usersStateBarChart.render();
     chart1.render();
     chart.render();
-  }
-  private loadAllProperty() {
-    this.propertyService.getChartData().subscribe(data => {
-        let property_type = JSON.parse(data["property_type"]);
-        let property_purpose = JSON.parse(data["property_purpose"]);
-        console.log(property_type);
-        
-        Object.keys(property_type).forEach(x=>{
-         this.property_typeChartData.push({ y: property_type[x], name: x });
-        });
-      
-        Object.keys(property_purpose).forEach(x=>{
-          this.property_purposeChartData.push({ y: property_purpose[x], name: x });
-        });
-      /*let chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-        exportEnabled: false,
-        zoomEnabled: true,
-        title: {
-          text: "Real Estate Rates"
-        },
-        axisX: {
-          title: "Area (in sq. ft)",
-          minimum: 10,
-          maximum: 5000
-        },
-        axisY: {
-          title: "Price (in USD)",
-          valueFormatString: "$#,##0k"
-        },
-        data: [
-          {
-            type: "scatter",
-            toolTipContent: "<b>Area: </b>{x} sq.ft<br/><b>Price: </b>${y}k",
-            dataPoints: data
-          }
-        ]
-      });
-      chart.render();*/
     });
   }
 }
