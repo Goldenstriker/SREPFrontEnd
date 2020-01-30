@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="card mt-4">
+				<div class="card-header bg-primary text-white">Register Property</div>
+				<div class="card-body">
+					<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+
+						<div class="form-group">
+							<label for="No_Of_BedRooms">Area Sq Foot</label>
+							<input type="number" formControlName="AreaSqFt" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.AreaSqFt.errors }" />
+							<div *ngIf="submitted && f.AreaSqFt.errors" class="invalid-feedback">
+								<div *ngIf="f.AreaSqFt.errors.required">Area Sq Foot is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="No_Of_BedRooms">No. of Living Rooms</label>
+							<input type="number" formControlName="No_Of_LivingRooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_LivingRooms.errors }" />
+							<div *ngIf="submitted && f.No_Of_LivingRooms.errors" class="invalid-feedback">
+								<div *ngIf="f.No_Of_LivingRooms.errors.required">No. of Living Rooms is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="No_Of_BedRooms">No. of Bed Rooms</label>
+							<input type="number" formControlName="No_Of_BedRooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_BedRooms.errors }" />
+							<div *ngIf="submitted && f.No_Of_BedRooms.errors" class="invalid-feedback">
+								<div *ngIf="f.No_Of_BedRooms.errors.required">No. of BedRooms is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="No_Of_BathRooms">No. of BathRooms</label>
+							<input type="number" formControlName="No_Of_BathRooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.No_Of_BathRooms.errors }" />
+							<div *ngIf="submitted && f.No_Of_BathRooms.errors" class="invalid-feedback">
+								<div *ngIf="f.No_Of_BathRooms.errors.required">No. of BathRooms is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Submit
+        </button>
+							<a routerLink="/home" class="btn btn-link">Cancel</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+    <div class="col"{{pricepredicted}}></div>
+	</div>
+</div>
