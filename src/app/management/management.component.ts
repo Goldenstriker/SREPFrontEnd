@@ -149,6 +149,7 @@ export class ManagementComponent implements OnInit {
     });
 
     usersStateBarChart.render();
+    chart.render();
     chart1.render();
     chart.render();
     });
