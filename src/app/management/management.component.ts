@@ -24,7 +24,7 @@ export class ManagementComponent implements OnInit {
     this.propertyService.getChartData().subscribe(data => {
         let property_type = JSON.parse(data["property_type"]);
         let property_purpose = JSON.parse(data["property_purpose"]);
-        let property_staus = JSON.parse(data["property_staus"]);
+        let property_status = JSON.parse(data["property_status"]);
         console.log(property_type);
         
         Object.keys(property_type).forEach(x=>{
@@ -34,8 +34,8 @@ export class ManagementComponent implements OnInit {
         Object.keys(property_purpose).forEach(x=>{
           this.property_purposeChartData.push({ y: property_purpose[x], name: x });
         });
-        Object.keys(property_staus).forEach(x=>{
-          this.property_statusChartData.push({ y: property_staus[x], name: x });
+        Object.keys(property_status).forEach(x=>{
+          this.property_statusChartData.push({ y: property_status[x], name: x });
         });
       let chart = new CanvasJS.Chart("chartContainer1", {
       theme: "light2",
@@ -149,7 +149,7 @@ export class ManagementComponent implements OnInit {
     });
 
     usersStateBarChart.render();
-    chart.render();
+    chart3.render();
     chart1.render();
     chart.render();
     });
