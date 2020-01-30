@@ -64,7 +64,7 @@ export class PredictorComponent implements OnInit {
       .subscribe(
         data => {
           this.pricepredicted = data;
-          
+          this.loading = false;
         },
         error => {
           this.alertService.error(error);
