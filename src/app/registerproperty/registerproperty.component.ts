@@ -49,8 +49,8 @@ export class RegisterpropertyComponent implements OnInit {
     if (!this.authenticationService.currentUserValue) {
       this.router.navigate(["/"]);
     }
-    this.userService.currentLoggedInUser.subscribe(x=>{
-      if(x){
+    this.userService.currentLoggedInUser.subscribe(x => {
+      if (x) {
         this.currentLoggedInUser = x.user_id;
       }
     });
@@ -140,6 +140,27 @@ export class RegisterpropertyComponent implements OnInit {
           }
         );
     }
+  }
+  private predictPrice() {
+    let data = [];
+    data.push(this.registerForm.value.AreaSqFt);
+    data.push(
+      parseFloat(this.registerForm.value.No_Of_BedRooms) +
+        parseFloat(this.registerForm.value.No_Of_LivingRooms)
+    );
+    data.push(this.registerForm.value.No_Of_BedRooms);
+    data.push(this.registerForm.value.No_Of_LivingRooms);
+    data.push(this.registerForm.value.No_Of_BathRooms);
+    let dataStringify = JSON.stringify(data);
+    this.propertyService
+      .predictSalePrice(dataStringify)
+      .pipe(first())
+      .subscribe(
+        data => {
+          console.log(data);
+        },
+        error => {}
+      );
   }
   private loadAllCountry() {
     this.masterService.getAllCountry().subscribe(countries => {
