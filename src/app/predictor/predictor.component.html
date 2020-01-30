@@ -4,7 +4,7 @@
 			<div class="card mt-4">
 				<div class="card-header bg-info text-white">Predict Price</div>
 				<div class="card-body">
-					<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+					<form [formGroup]="predictorForm" (ngSubmit)="onSubmit()">
 						<div class="form-group">
 							<label for="No_Of_BedRooms">Area Sq Foot</label>
 							<input type="number" formControlName="AreaSqFt" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.AreaSqFt.errors }" />
@@ -34,7 +34,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<button [disabled]="!registerForm.valid" class="btn btn-primary">
+							<button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Submit
         </button>
@@ -45,10 +45,10 @@
 			</div>
 		</div>
 		<div class="col">{{pricepredicted}}
-			<pre>{{registerForm.get('AreaSqFt').valid}}</pre>
-			<pre>{{registerForm.get('No_Of_LivingRooms').valid}}</pre>
-			<pre>{{registerForm.get('No_Of_BedRooms').valid}}</pre>
-			<pre>{{registerForm.get('No_Of_BathRooms').valid}}</pre>
+			<pre>{{predictorForm.get('AreaSqFt').valid}}</pre>
+			<pre>{{predictorForm.get('No_Of_LivingRooms').valid}}</pre>
+			<pre>{{predictorForm.get('No_Of_BedRooms').valid}}</pre>
+			<pre>{{predictorForm.get('No_Of_BathRooms').valid}}</pre>
 		</div>
 	</div>
 </div>

@@ -13,7 +13,7 @@ import {
   styleUrls: ["./predictor.component.css"]
 })
 export class PredictorComponent implements OnInit {
-  registerForm: FormGroup;
+  predictorForm: FormGroup;
   loading = false;
   submitted = false;
   pricepredicted: number;
@@ -30,7 +30,7 @@ export class PredictorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.predictorForm = this.formBuilder.group({
       No_Of_BedRooms: ["", Validators.required],
       No_Of_LivingRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
@@ -39,25 +39,25 @@ export class PredictorComponent implements OnInit {
     });
   }
   get f() {
-    return this.registerForm.controls;
+    return this.predictorForm.controls;
   }
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
+    /* stop here if form is invalid
+    if (this.predictorForm.invalid) {
       return;
-    }
+    }*/
     this.loading = true;
     let data = "";
-    data += this.registerForm.value.AreaSqFt + ";";
+    data += this.predictorForm.value.AreaSqFt + ";";
     data +=
-      parseFloat(this.registerForm.value.No_Of_BedRooms) +
-      parseFloat(this.registerForm.value.No_Of_LivingRooms) +
+      parseFloat(this.predictorForm.value.No_Of_BedRooms) +
+      parseFloat(this.predictorForm.value.No_Of_LivingRooms) +
       ";";
-    data += this.registerForm.value.No_Of_BedRooms + ";";
-    data += this.registerForm.value.No_Of_LivingRooms + ";";
-    data += this.registerForm.value.No_Of_BathRooms;
+    data += this.predictorForm.value.No_Of_BedRooms + ";";
+    data += this.predictorForm.value.No_Of_LivingRooms + ";";
+    data += this.predictorForm.value.No_Of_BathRooms;
     this.propertyService
       .predictSalePrice(data)
       .pipe(first())
