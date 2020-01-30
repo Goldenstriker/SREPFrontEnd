@@ -5,9 +5,6 @@
 				<div class="card-header bg-primary text-white">Register Property</div>
 				<div class="card-body">
 					<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
-
-
 						<div class="form-group">
 							<label for="No_Of_BedRooms">Area Sq Foot</label>
 							<input type="number" formControlName="AreaSqFt" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.AreaSqFt.errors }" />
