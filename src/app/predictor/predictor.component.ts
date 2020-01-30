@@ -34,7 +34,6 @@ export class PredictorComponent implements OnInit {
       No_Of_BedRooms: ["", Validators.required],
       No_Of_LivingRooms: ["", Validators.required],
       No_Of_BathRooms: ["", Validators.required],
-      No_Of_Floors: ["", Validators.required],
       AreaSqFt: ["", Validators.required]
     });
   }
