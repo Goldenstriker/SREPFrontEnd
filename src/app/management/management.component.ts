@@ -61,7 +61,7 @@ export class ManagementComponent implements OnInit {
           {
             type: "pie",
             showInLegend: true,
-            toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+            toolTipContent: "<b>{name}</b>: {y} (#percent%)",
             indexLabel: "{name} - #percent%",
             dataPoints: this.property_typeChartData
           }
@@ -85,7 +85,7 @@ export class ManagementComponent implements OnInit {
             legendMarkerType: "square",
             type: "pie",
             showInLegend: true,
-            toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+            toolTipContent: "<b>{name}</b>: {y} (#percent%)",
             indexLabel: "{name} - #percent%",
             dataPoints: this.property_purposeChartData
           }
@@ -109,7 +109,7 @@ export class ManagementComponent implements OnInit {
             legendMarkerType: "square",
             type: "pie",
             showInLegend: true,
-            toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+            toolTipContent: "<b>{name}</b>: {y} (#percent%)",
             indexLabel: "{name} - #percent%",
             dataPoints: this.property_statusChartData
           }
