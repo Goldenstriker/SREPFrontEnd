@@ -142,15 +142,15 @@ export class RegisterpropertyComponent implements OnInit {
     }
   }
   private predictPrice() {
-    let data = [];
-    data.push(this.registerForm.value.AreaSqFt);
-    data.push(
+    let data = "";
+    data += this.registerForm.value.AreaSqFt + ";";
+    data +=
       parseFloat(this.registerForm.value.No_Of_BedRooms) +
-        parseFloat(this.registerForm.value.No_Of_LivingRooms)
-    );
-    data.push(this.registerForm.value.No_Of_BedRooms);
-    data.push(this.registerForm.value.No_Of_LivingRooms);
-    data.push(this.registerForm.value.No_Of_BathRooms);
+      parseFloat(this.registerForm.value.No_Of_LivingRooms) +
+      ";";
+    data += this.registerForm.value.No_Of_BedRooms + ";";
+    data += this.registerForm.value.No_Of_LivingRooms + ";";
+    data += this.registerForm.value.No_Of_BathRooms;
     let dataStringify = JSON.stringify(data);
     this.propertyService
       .predictSalePrice(dataStringify)
