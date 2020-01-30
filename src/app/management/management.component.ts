@@ -13,6 +13,7 @@ export class ManagementComponent implements OnInit {
   properties: Property[] = [];
   property_purposeChartData = [];
   property_typeChartData = [];
+  property_statusChartData = [];
   constructor(private propertyService: PropertyService) {}
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class ManagementComponent implements OnInit {
     this.propertyService.getChartData().subscribe(data => {
         let property_type = JSON.parse(data["property_type"]);
         let property_purpose = JSON.parse(data["property_purpose"]);
+        let property_staus = JSON.parse(data["property_staus"]);
         console.log(property_type);
         
         Object.keys(property_type).forEach(x=>{
@@ -31,6 +33,9 @@ export class ManagementComponent implements OnInit {
       
         Object.keys(property_purpose).forEach(x=>{
           this.property_purposeChartData.push({ y: property_purpose[x], name: x });
+        });
+        Object.keys(property_staus).forEach(x=>{
+          this.property_statusChartData.push({ y: property_staus[x], name: x });
         });
       let chart = new CanvasJS.Chart("chartContainer1", {
       theme: "light2",
@@ -76,6 +81,30 @@ export class ManagementComponent implements OnInit {
           toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
           indexLabel: "{name} - #percent%",
           dataPoints: this.property_purposeChartData
+        }
+      ]
+    });
+    let chart3 = new CanvasJS.Chart("chartContainer3", {
+      theme: "light2",
+      animationEnabled: true,
+      exportEnabled: false,
+      title: {
+        text: ""
+      },
+      legend: {
+        fontFamily: "calibri",
+        fontSize: 14,
+        horizontalAlign: "left",
+        verticalAlign: "center"
+      },
+      data: [
+        {
+          legendMarkerType: "square",
+          type: "pie",
+          showInLegend: true,
+          toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+          indexLabel: "{name} - #percent%",
+          dataPoints: this.property_statusChartData
         }
       ]
     });
