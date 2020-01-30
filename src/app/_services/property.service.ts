@@ -37,6 +37,6 @@ export class PropertyService {
   }
   
   predictSalePrice(data: any) {
-    return this.http.post<any>(this.baseURL + `/predictSalePrice/`+ data, data);
+    return this.http.get<any>(this.baseURL + `/predictSalePrice/`+ data);
   }
 }
