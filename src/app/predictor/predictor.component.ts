@@ -44,10 +44,10 @@ export class PredictorComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    /* stop here if form is invalid
+    //stop here if form is invalid
     if (this.predictorForm.invalid) {
       return;
-    }*/
+    }
     this.loading = true;
     let data = "";
     data += this.predictorForm.value.AreaSqFt + ";";
