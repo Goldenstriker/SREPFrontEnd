@@ -23,7 +23,7 @@
 					<h5 class="card-title">Favourite Property</h5>
 					<app-property *ngFor="let property of favouriteproperties" [property]="property">
 					</app-property>
-					<div class="card" *ngIf="properties.length == 0">
+					<div class="card" *ngIf="favouriteproperties.length == 0">
 						<header class="card-header">
 							<h6 class="title text-center">No Data Found</h6>
 						</header>

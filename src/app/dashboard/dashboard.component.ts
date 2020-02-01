@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
     this.loadAllProperty();
   }
   private loadAllProperty() {
-    this.propertyService.search().subscribe(properties => {
+    this.propertyService.search("").subscribe(properties => {
       this.favouriteproperties = properties.filter(x => {
         return this.favourite.indexOf(x.ID) != -1;
       });
