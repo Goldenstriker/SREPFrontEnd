@@ -13,6 +13,7 @@ export class MasterService {
   private states : Observable<State[]> ;
   private purpose : Observable<PropertyPurpose[]> ;
   private types : Observable<PropertyType[]> ;
+  private status : Observable<PropertyStatus[]> ;
   getAllCountry() {
     if(!this.countries){
       this.countries  = this.http.get<Country[]>(this.baseURL + "/country/").pipe(shareReplay(1));
@@ -37,12 +38,20 @@ export class MasterService {
     if(!this.types){
       this.types = this.http.get<PropertyType[]>(this.baseURL + "/propertytype/").pipe(shareReplay(1));
     }
-    return this.
+    return this.types;
   }
   getPropertyStatus() {
-    return this.http.get<PropertyStatus[]>(this.baseURL + "/propertystatus/");
+    //return this.http.get<PropertyStatus[]>(this.baseURL + "/propertystatus/");
+    if(!this.status){
+      this.status =this.http.get<PropertyStatus[]>(this.baseURL + "/propertystatus/").pipe(shareReplay(1));
+    }
+    return this.status;
   }
   getPropertyPurpose() {
-    return this.http.get<PropertyPurpose[]>(this.baseURL + "/propertypurpose/");
+    //return this.http.get<PropertyPurpose[]>(this.baseURL + "/propertypurpose/");
+     if(!this.purpose){
+      this.purpose =this.http.get<PropertyPurpose[]>(this.baseURL + "/propertypurpose/").pipe(shareReplay(1));
+    }
+    return this.purpose;
   }
 }
