@@ -24,3 +24,10 @@
 		</table>
 	</div>
 </div>
+
+<div>
+
+	<ul *ngFor="let item of recommendations" class="list-group">
+		<li class="list-group-item"><a [routerLink]="['/propertydetails',item.id]">{{item.name}}</a></li>
+	</ul>
+</div>

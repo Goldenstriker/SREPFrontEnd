@@ -16,7 +16,7 @@ import { Property } from "../_models";
 export class PropertydetailsComponent implements OnInit {
   recordID: string = "";
   property: Property;
-  recommendation = [];
+  recommendations = [];
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -24,22 +24,23 @@ export class PropertydetailsComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService,
     private propertyService: PropertyService
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.route.params.subscribe(params => {
       if (params && params.id) {
         this.recordID = params.id;
         this.propertyService.get(params.id).subscribe(property => {
           this.property = property;
+          this.getrecommendation(property.Name);
         });
       }
     });
   }
 
-  ngOnInit() {}
-
-  private getrecommendation() {
-    this.propertyService.getrecommendation().subscribe(data => {
-      this.recommendation = data;
+  private getrecommendation(propertyname: string) {
+    this.propertyService.getrecommendation(propertyname).subscribe(data => {
+      this.recommendations = data;
     });
   }
 }
