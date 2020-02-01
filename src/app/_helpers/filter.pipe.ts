@@ -13,7 +13,9 @@ export class FilterPipe implements PipeTransform {
     Object.keys(searchText).forEach(x => {
       if (searchText[x].length != 0) {
         items = items.filter(it => {
-          return searchText[x].indexOf(it[x]) != -1;
+          if (x == "City" || x == "State")
+            return searchText[x].indexOf(it[x][x + "_ID"]) != -1;
+          else return searchText[x].indexOf(it[x].ID) != -1;
         });
       }
     });

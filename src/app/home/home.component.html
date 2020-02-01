@@ -36,7 +36,7 @@
 								</div> <!-- card-body.// -->
 							</div>
 				</article> <!-- card-group-item.// -->
-				<article class="card-group-item mb-2">
+				<!--		<article class="card-group-item mb-2">
 					<header class="card-header">
 						<input type="text" style="display:none"  [(ngModel)]="searchText" />
 						<h6 class="title">Country</h6>
@@ -48,10 +48,10 @@
 								<span class="float-right badge badge-light round">52</span>
 								<input type="checkbox" class="custom-control-input" [id]="country.Name" (change)="toggleVisibility($event,country.Country_ID,'Country')" />
 								<label class="custom-control-label" [for]="country.Name">{{country.Name}}</label>
-							</div> <!-- form-check.// -->
-						</div> <!-- card-body.// -->
+							</div> <!-- form-check.// 
+						</div> <!-- card-body.// 
 					</div>
-				</article> <!-- card-group-item.// -->
+				</article>  -->
 				<article class="card-group-item mb-2">
 					<header class="card-header">
 						<h6 class="title">State</h6>
@@ -131,7 +131,7 @@
 				</div>
 			</div>
 			<app-property *ngFor="let property of properties | filter: searchText, let i = index" [property]="property"
-				[currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)" [animationDelay]="i" >
+				[currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)" [animationDelay]="i">
 			</app-property>
 			<div class="card" *ngIf="properties.length == 0">
 				<header class="card-header">

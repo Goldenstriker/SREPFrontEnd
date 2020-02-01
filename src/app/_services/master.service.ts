@@ -57,7 +57,7 @@ export class MasterService {
   }
   getCount(){
     if(!this.countData){
-        this.purpose =this.http.get<a>(this.baseURL + "/countdata/").pipe(shareReplay(1));
+        this.purpose =this.http.get<any>(this.baseURL + "/countdata/").pipe(shareReplay(1));
     }
     return this.countData;
   }

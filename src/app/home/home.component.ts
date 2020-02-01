@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   propertystatus: PropertyStatus[] = [];
   propertytype: PropertyType[] = [];
   searchText: string = JSON.stringify({
-    Country: [],
     State: [],
     City: [],
     Property_Type: [],
@@ -103,7 +102,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   private loadAllCountry() {
     this.masterService.getAllCountry().subscribe(countries => {
       this.countries = countries;
-      console.log(countries);
     });
   }
   //propertyService
@@ -125,13 +123,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   private loadPropertyStatus() {
     this.masterService.getPropertyStatus().subscribe(propertystatus => {
       this.propertystatus = propertystatus;
-      console.log(propertystatus);
     });
   }
   private loadPropertyType() {
     this.masterService.getPropertyType().subscribe(propertytype => {
       this.propertytype = propertytype;
-      console.log(propertytype);
+      
     });
   }
   toggleVisibility(e, data, prop) {
