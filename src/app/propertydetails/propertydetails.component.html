@@ -32,7 +32,7 @@
 			<h5 class="card-title">Similar property you might interested in
 			</h5>
 			 <ul *ngFor="let item of recommendations, let i = index" class="list-group">
-				<li class="list-group-item  animated fadeInUp" style="animation-delay: {{i}}s;"><a [routerLink]="['/propertydetails',item.id]">{{item.name}}</a></li>
+				<li class="list-group-item my-1 animated fadeInUp" style="animation-delay: {{i}}s;"><a [routerLink]="['/propertydetails',item.id]">{{item.name}}</a></li>
 			</ul>
 		</div>
 	</div>
