@@ -16,6 +16,7 @@ import { Property } from "../_models";
 export class PropertydetailsComponent implements OnInit {
   recordID: string = "";
   property: Property;
+  recommendation = [];
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -35,4 +36,10 @@ export class PropertydetailsComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  private getrecommendation() {
+    this.propertyService.getrecommendation().subscribe(data => {
+      this.recommendation = data;
+    });
+  }
 }
