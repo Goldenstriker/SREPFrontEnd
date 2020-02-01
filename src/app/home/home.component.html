@@ -59,7 +59,6 @@
 					<div class="filter-content">
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let state of states">
-								<span class="float-right badge badge-light round">52</span>
 								<input type="checkbox" class="custom-control-input" [id]="state.Name" (change)="toggleVisibility($event,state.State_ID,'State')" />
 								<label class="custom-control-label" [for]="state.Name">{{state.Name}}</label>
 							</div> <!-- form-check.// -->
@@ -73,7 +72,6 @@
 					<div class="filter-content">
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let city of cities">
-								<span class="float-right badge badge-light round">52</span>
 								<input type="checkbox" class="custom-control-input" [id]="city.Name" (change)="toggleVisibility($event,city.City_ID,'City')" />
 								<label class="custom-control-label" [for]="city.Name">{{city.Name}}</label>
 							</div> <!-- form-check.// -->
@@ -87,7 +85,6 @@
 					<div class="filter-content">
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let type of propertytype">
-								<span class="float-right badge badge-light round">52</span>
 								<input type="checkbox" class="custom-control-input" [id]="type.Name" (change)="toggleVisibility($event,type.ID,'Property_Type')" />
 								<label class="custom-control-label" [for]="type.Name">{{type.Name}}</label>
 							</div> <!-- form-check.// -->
@@ -101,7 +98,7 @@
 					<div class="filter-content">
 						<div class="card-body">
 							<div class="custom-control custom-checkbox" *ngFor="let status of propertystatus">
-								<span class="float-right badge badge-light round">52</span>
+								
 								<input type="checkbox" class="custom-control-input" [id]="status.Name" (change)="toggleVisibility($event,status.ID,'Property_Status')" />
 								<label class="custom-control-label" [for]="status.Name">{{status.Name}}</label>
 							</div> <!-- form-check.// -->
