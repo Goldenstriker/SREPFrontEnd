@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentLoggedInUser: string = "";
   searchform: FormGroup;
   userprofile: UserProfile;
+  counteddata:any;
   constructor(
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
@@ -100,8 +101,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadAllCountry() {
-    this.masterService.getAllCountry().subscribe(countries => {
-      this.countries = countries;
+    this.masterService.getCount().subscribe(data => {
+      this.counteddata = data;
     });
   }
   //propertyService
