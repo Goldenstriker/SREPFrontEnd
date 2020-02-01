@@ -101,9 +101,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadAllCountry() {
-    this.masterService.getCount().subscribe(data => {
-      this.counteddata = data;
-    });
+   // this.masterService.getCount().subscribe(data => {
+     // this.counteddata = data;
+    //});
   }
   //propertyService
   private loadAllProperty() {
