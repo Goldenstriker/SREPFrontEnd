@@ -88,8 +88,11 @@ export class RegisterpropertyComponent implements OnInit {
         this.recordID = params.id;
         this.propertyService.get(params.id).subscribe(property => {
           property.City = property.City.City_ID;
-          property.Country = property.Country .Country_ID;
-          property.State = property.City.State_ID;
+          property.Country = property.Country.Country_ID;
+          property.State = property.State.State_ID;
+          property.Property_Type = property.Property_Type.ID;
+          property.Property_Status = property.Property_Status.ID;
+          property.Property_Purpose = property.Property_Purpose.ID;
           this.registerForm.setValue(property);
           this.isEditForm = true;
         });
