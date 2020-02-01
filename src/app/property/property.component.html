@@ -1,6 +1,7 @@
+
 <div class="card mb-4 animated fadeInUp" style="animation-delay: {{animationDelay}}s;">
 	<div class="card-body">
-		<h5 class="card-title">{{property.Name}}
+		<h5 class="card-title"><a [routerLink]="['/propertydetails',property.ID]">{{property.Name}}</a>
 			<a *ngIf="currentuser == property.UserCreatedBy" class="float-right btn btn-outline-primary ml-2"
 				[routerLink]="['/registerproperty',property.ID]">Edit</a>
 			<button	class="float-right btn btn-outline-primary"

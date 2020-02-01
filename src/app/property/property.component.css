@@ -11,3 +11,7 @@
 .card-block {
     padding: 1.25rem;
 }
+a,a:hover{
+  text-decoration: none;
+  color:#000;
+}
