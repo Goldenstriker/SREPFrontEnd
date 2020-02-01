@@ -14,6 +14,7 @@ export class MasterService {
   private purpose : Observable<PropertyPurpose[]> ;
   private types : Observable<PropertyType[]> ;
   private status : Observable<PropertyStatus[]> ;
+  private countData : Observable<any>;
   getAllCountry() {
     if(!this.countries){
       this.countries  = this.http.get<Country[]>(this.baseURL + "/country/").pipe(shareReplay(1));
@@ -53,5 +54,11 @@ export class MasterService {
       this.purpose =this.http.get<PropertyPurpose[]>(this.baseURL + "/propertypurpose/").pipe(shareReplay(1));
     }
     return this.purpose;
+  }
+  getCount(){
+    if(!this.countData){
+        this.purpose =this.http.get<a>(this.baseURL + "/countdata/").pipe(shareReplay(1));
+    }
+    return this.countData;
   }
 }
