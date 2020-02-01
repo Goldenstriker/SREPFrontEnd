@@ -7,7 +7,7 @@ import {
   AuthenticationService,
   PropertyService
 } from "../_services";
-import { Property, } from "../_models";
+import { Property } from "../_models";
 @Component({
   selector: "app-propertydetails",
   templateUrl: "./propertydetails.component.html",
@@ -17,8 +17,6 @@ export class PropertydetailsComponent implements OnInit {
   recordID: string = "";
   property: Property;
   recommendations = [];
-  currentLoggedInUser: string = "";
-  userprofile: UserProfile;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -26,14 +24,7 @@ export class PropertydetailsComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService,
     private propertyService: PropertyService
-  ) {
-    this.userService.currentLoggedInUser.subscribe(x => {
-      if (x) {
-        this.currentLoggedInUser = x.user_id;
-        this.userprofile = x.userprofile;
-      }
-    });
-  }
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {

@@ -1,9 +1,39 @@
-<app-property [property]="property" [currentuser]="currentLoggedInUser" (propertyid)="addToFavouite($event)"
-	[animationDelay]="i">
-
-	<div>
-
-		<ul *ngFor="let item of recommendations" class="list-group">
-			<li class="list-group-item"><a [routerLink]="['/propertydetails',item.id]">{{item.name}}</a></li>
-		</ul>
+<ng-container *ngIf="property">  
+<div class="card my-4">
+	<div class="card-body">
+		<h5 class="card-title">{{property.Name}}
+		</h5>
+		<p class="card-text">{{property.Description}}</p>
+		<p class="card-text">{{property.Address}}</p>
+		<table class="table table-bordered">
+			<tr>
+				<td>No. of Living Room</td>
+				<td>{{property.No_Of_LivingRooms}}</td>
+			</tr>
+			<tr>
+				<td>No. of Bed Room</td>
+				<td>{{property.No_Of_BedRooms}}</td>
+			</tr>
+			<tr>
+				<td>No. of Floors</td>
+				<td>{{property.No_Of_Floors}}</td>
+			</tr>
+			<tr>
+				<td>Available for</td>
+				<td>{{property.Property_Purpose.Name}}</td>
+			</tr>
+		</table>
 	</div>
+</div>
+
+
+<div class="card my-4 animated fadeInUp" style="animation-delay: 1s;">
+	<div class="card-body">
+		<h5 class="card-title">{{property.Name}}
+		</h5>
+	<ul *ngFor="let item of recommendations" class="list-group">
+		<li class="list-group-item"><a [routerLink]="['/propertydetails',item.id]">{{item.name}}</a></li>
+	</ul>
+	</div>
+</div>
+</ng-container>
