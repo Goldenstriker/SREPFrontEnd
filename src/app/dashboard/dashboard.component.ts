@@ -42,13 +42,12 @@ export class DashboardComponent implements OnInit {
     this.loadAllProperty();
   }
   private loadAllProperty() {
-    this.propertyService.getAll().subscribe(properties => {
+    this.propertyService.search().subscribe(properties => {
       this.favouriteproperties = properties.filter(x => {
         return this.favourite.indexOf(x.ID) != -1;
       });
       this.properties = properties.filter(x => {
-        console.log(x.UserCreatedBy);
-        return x.UserCreatedBy == this.currentLoggedInUser;
+        return x.UserCreatedBy.ID == this.currentLoggedInUser;
       });
     });
   }
