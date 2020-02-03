@@ -15,7 +15,7 @@ export class PropertyService {
   }
 
   get(id: number) {
-    return this.http.get<Property>(this.baseURL + `/properties/` + id);
+    return this.http.get<Property>(this.baseURL + `/allproperties/` + id);
   }
 
   update(property: Property, id: string) {
